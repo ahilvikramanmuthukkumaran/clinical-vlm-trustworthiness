@@ -1,5 +1,6 @@
 import streamlit as st
 from validation import validate_question
+from PIL import Image
 
 st.set_page_config(page_title = "CLINICAL VLM TRUSTWORTHINESS")
 
@@ -10,6 +11,14 @@ image =  st.file_uploader(
     "Upload a valid medical image",
     type=["png", "jpg", "jprg"]
 )
+if image is not None:
+    try:
+        img = Image.open(image)
+        img.verify()
+        img.seek(0)
+        st.success("Image file is valid.")
+    except Exception:
+        st.error("Invalid image file. Please upload a valid PNG or JPEG.")
 
 question = st.text_area("Enter your clinical question:")
 
