@@ -12,8 +12,9 @@ Enhancing Clinical Trustworthiness: Reducing Object and Text Hallucinations in M
 - Basic input tests
 
 ## Team Responsibilities
-- Vikram: Application, validation, testing, and documentation
-- Arjun: Model training, hallucination mitigation, and final integration
+- Vikram: Application, validation, testing, documentation and final integration
+- Arjun: Model training, hallucination mitigation and final integration
+
 
 ## Status
-Model integration is pending.
+Model integration is pending
