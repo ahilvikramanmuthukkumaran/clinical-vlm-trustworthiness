@@ -12,3 +12,10 @@ def test_valid_image():
     image = Image.new("RGB", (100,100))
     image.format = "PNG"
     assert validate_image(image)[0] is True
+
+def test_valid_image_format():
+    image = Image.new("RGB",(100,100))
+    image.format = "BMP"
+
+    valid, _ = validate_image(image)
+    assert valid is False
