@@ -9,13 +9,16 @@ st.write("Research prototype for studying the hallucinations in medical VLMs.")
 
 image =  st.file_uploader(
     "Upload a valid medical image",
-    type=["png", "jpg", "jprg"]
+    type=["png", "jpg", "jpeg"]
 )
 if image is not None:
     try:
         img = Image.open(image)
         img.verify()
+        
         img.seek(0)
+        img = Image.open(image)
+        st.image(img, caption="Uploaded medical image", use_container_width=True)
         st.success("Image file is valid.")
     except Exception:
         st.error("Invalid image file. Please upload a valid PNG or JPEG.")
