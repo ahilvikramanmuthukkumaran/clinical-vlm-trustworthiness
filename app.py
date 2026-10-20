@@ -1,4 +1,5 @@
 import streamlit as st
+from validation import validate_question
 
 st.set_page_config(page_title = "CLINICAL VLM TRUSTWORTHINESS")
 
@@ -15,8 +16,9 @@ question = st.text_area("Enter your clinical question:")
 if st.button("Validate inputs"):
     if image is None:
         st.error("Please upload an image.")
-    elif not question.strip():
-        st.error("Please enter a question.")
     else:
-        st.success("Inputs received! Model integration is not connected yet.")
-        
+        valid, message = validate_question(question)
+        if not valid:
+            st.error(message)
+        else:
+            st.success("Inputs received! Model integration is not connected yet.")
