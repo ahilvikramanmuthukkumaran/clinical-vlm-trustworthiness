@@ -21,7 +21,7 @@ if image is not None:
         st.image(img, caption="Uploaded medical image", use_container_width=True)
         st.success("Image file is valid.")
     except Exception:
-        st.error("Invalid image file. Please upload a valid PNG or JPEG.")
+        st.error("Invalid image file. Please upload a valid PNG or JPEG or JPG.")
 
 question = st.text_area("Enter your clinical question:")
 
@@ -29,8 +29,15 @@ if st.button("Validate inputs"):
     if image is None:
         st.error("Please upload an image.")
     else:
-        valid, message = validate_question(question)
-        if not valid:
-            st.error(message)
-        else:
-            st.success("Inputs received! Model integration is not connected yet.")
+        try:
+            image.seek(0)
+            img = Image.open(image)
+            img.verify()
+
+            valid, message = validate_question(question)
+            if not valid:
+                st.error(message)
+            else:
+                st.success("Inputs received! Model integration is not connected yet.")
+        except Exception:
+            st.error("Invalid image. Please upload a valid PNG or JPEG or JPG.")
