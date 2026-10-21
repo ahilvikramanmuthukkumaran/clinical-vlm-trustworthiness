@@ -1,0 +1,9 @@
+example_id,system,data_type,object_hallucination_rate,clinical_hallucination_rate
+SYN001,synthetic_baseline,SYNTHETIC_NOT_REAL_MODEL_OUTPUT,0.3333333333333333,0.5
+SYN001,synthetic_mitigated,SYNTHETIC_NOT_REAL_MODEL_OUTPUT,0.0,0.0
+SYN002,synthetic_baseline,SYNTHETIC_NOT_REAL_MODEL_OUTPUT,0.5,0.5
+SYN002,synthetic_mitigated,SYNTHETIC_NOT_REAL_MODEL_OUTPUT,0.5,0.5
+SYN003,synthetic_baseline,SYNTHETIC_NOT_REAL_MODEL_OUTPUT,0.0,0.0
+SYN003,synthetic_mitigated,SYNTHETIC_NOT_REAL_MODEL_OUTPUT,0.0,0.0
+SYN004,synthetic_baseline,SYNTHETIC_NOT_REAL_MODEL_OUTPUT,0.5,0.5
+SYN004,synthetic_mitigated,SYNTHETIC_NOT_REAL_MODEL_OUTPUT,0.0,0.0
