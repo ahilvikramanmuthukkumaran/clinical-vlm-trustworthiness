@@ -10,6 +10,8 @@ Enhancing Clinical Trustworthiness: Reducing Object and Text Hallucinations in M
 - Clinical question validation
 - Streamlit interface
 - Basic input tests
+- Hallucination object rate 
+- synthetic experiments and graphs measured
 
 ## Team Responsibilities
 - Vikram: Application, validation, testing, documentation and final integration
