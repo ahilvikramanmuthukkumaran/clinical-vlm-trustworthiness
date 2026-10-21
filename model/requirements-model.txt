@@ -1,0 +1,10 @@
+# Model-development dependencies (kept separate from the Streamlit requirements.txt).
+# Install PyTorch with CUDA FIRST, using the command from https://pytorch.org/get-started/locally/
+# e.g. (CUDA 12.1):  pip install torch --index-url https://download.pytorch.org/whl/cu121
+transformers>=4.50
+accelerate>=0.34
+peft>=0.13
+bitsandbytes>=0.43.3   # Windows support starts at 0.43
+datasets>=3.0
+huggingface_hub>=0.25
+pillow>=10.0
