@@ -1,43 +1,170 @@
-import streamlit as st
-from validation import validate_question
-from PIL import Image
 
-st.set_page_config(page_title = "CLINICAL VLM TRUSTWORTHINESS")
+import sys
+from pathlib import Path
+
+import streamlit as st
+from PIL import Image, UnidentifiedImageError
+
+# --------------------------------------------------
+# Project paths and model import
+# --------------------------------------------------
+ROOT = Path(__file__).resolve().parent
+MODEL_SRC = ROOT / "model" / "src"
+ADAPTER = ROOT / "model" / "checkpoints" / "medgemma_vqarad_lora"
+
+if str(MODEL_SRC) not in sys.path:
+    sys.path.insert(0, str(MODEL_SRC))
+
+try:
+    from predict import predict
+    MODEL_IMPORT_ERROR = None
+except Exception as exc:
+    predict = None
+    MODEL_IMPORT_ERROR = f"{type(exc).__name__}: {exc}"
+
+from validation import validate_question
+
+# --------------------------------------------------
+# Streamlit interface
+# --------------------------------------------------
+st.set_page_config(
+    page_title="Clinical VLM Trustworthiness",
+    page_icon="🩺",
+    layout="centered",
+)
 
 st.title("Clinical Vision Language Model Trustworthiness")
-st.write("Research prototype for studying the hallucinations in medical VLMs.")
-
-image =  st.file_uploader(
-    "Upload a valid medical image",
-    type=["png", "jpg", "jpeg"]
+st.caption(
+    "Research prototype for studying hallucinations in medical VLMs. "
+    "Not intended for clinical decision-making."
 )
-if image is not None:
-    try:
-        img = Image.open(image)
-        img.verify()
-        
-        img.seek(0)
-        img = Image.open(image)
-        st.image(img, caption="Uploaded medical image", use_container_width=True)
-        st.success("Image file is valid.")
-    except Exception:
-        st.error("Invalid image file. Please upload a valid PNG or JPEG or JPG.")
+
+uploaded = st.file_uploader(
+    "Upload a medical image",
+    type=["png", "jpg", "jpeg"],
+)
 
 question = st.text_area("Enter your clinical question:")
 
-if st.button("Validate inputs"):
-    if image is None:
-        st.error("Please upload an image.")
-    else:
-        try:
-            image.seek(0)
-            img = Image.open(image)
-            img.verify()
+mode_label = st.radio(
+    "Prediction mode",
+    ["Mitigated", "Baseline"],
+    horizontal=True,
+)
 
-            valid, message = validate_question(question)
-            if not valid:
-                st.error(message)
-            else:
-                st.success("Inputs received! Model integration is not connected yet.")
-        except Exception:
-            st.error("Invalid image. Please upload a valid PNG or JPEG or JPG.")
+# --------------------------------------------------
+# Validate and preview uploaded image
+# --------------------------------------------------
+image = None
+
+if uploaded is not None:
+    try:
+        uploaded.seek(0)
+
+        with Image.open(uploaded) as checked_image:
+            checked_image.verify()
+
+        uploaded.seek(0)
+
+        with Image.open(uploaded) as opened_image:
+            image = opened_image.convert("RGB")
+
+        st.image(
+            image,
+            caption="Uploaded medical image",
+            use_container_width=True,
+        )
+        st.success("Image file is valid.")
+
+    except (UnidentifiedImageError, OSError, ValueError):
+        image = None
+        st.error("Invalid image. Please upload a valid PNG or JPEG file.")
+
+# --------------------------------------------------
+# Run prediction
+# --------------------------------------------------
+if st.button("Get prediction", type="primary"):
+    if image is None:
+        st.error("Please upload a valid medical image.")
+        st.stop()
+
+    valid, message = validate_question(question)
+
+    if not valid:
+        st.error(message)
+        st.stop()
+
+    if predict is None:
+        st.error("The model module could not be imported.")
+        st.code(MODEL_IMPORT_ERROR)
+        st.stop()
+
+    mode = "mitigated" if mode_label == "Mitigated" else "baseline"
+
+    if mode == "mitigated" and not ADAPTER.is_dir():
+        st.error(f"Trained adapter folder not found: {ADAPTER}")
+        st.info(
+            "Make sure the repository and trained adapter checkpoint "
+            "are available in the environment running this app."
+        )
+        st.stop()
+
+    try:
+        with st.spinner("Generating prediction. The first run may take time..."):
+            prediction_args = {}
+
+            if mode == "mitigated":
+                prediction_args["adapter_path"] = str(ADAPTER)
+
+            result = predict(
+                image=image,
+                question=question.strip(),
+                mode=mode,
+                **prediction_args,
+            )
+
+        st.divider()
+        st.subheader("Model prediction")
+
+        if result.is_stub:
+            st.warning(
+                "STUB MODE: the real model did not run. "
+                "This is a placeholder output, not a real model prediction."
+            )
+        elif result.abstained:
+            st.warning("The model abstained from answering.")
+        else:
+            st.success("Prediction generated by the model.")
+
+        st.write("**Answer**")
+        st.write(result.answer)
+
+        col1, col2 = st.columns(2)
+
+        with col1:
+            st.metric("Reported confidence", f"{result.confidence:.1%}")
+
+        with col2:
+            st.metric("Mode", result.mode.capitalize())
+
+        st.write(f"**Abstained:** {'Yes' if result.abstained else 'No'}")
+        st.write(f"**Stub output:** {'Yes' if result.is_stub else 'No'}")
+
+        with st.expander("Technical details"):
+            st.write(f"**Adapter path:** {ADAPTER if mode == 'mitigated' else 'None (baseline)'}")
+            st.write("**Raw model output:**")
+            st.code(result.raw_text or "(empty)")
+
+    except Exception as exc:
+        st.error("Prediction failed.")
+        st.code(f"{type(exc).__name__}: {exc}")
+        st.info(
+            "Check the model dependencies, access to the base model, "
+            "GPU availability, adapter files, and available GPU memory."
+        )
+
+st.divider()
+st.caption(
+    "Research prototype only. Model predictions may be incorrect "
+    "and must not be used as a substitute for professional medical judgment."
+)
