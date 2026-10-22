@@ -3,8 +3,11 @@
 
   "model_id": "google/medgemma-4b-it",
 
-  "abstention_threshold": 0.6,
-  "_abstention_threshold": "mitigated mode abstains when confidence falls below this. 0.0 disables abstention, 1.0 abstains always.",
+  "abstention_threshold": 0.8,
+  "_abstention_threshold": "mitigated mode abstains when confidence falls below this. 0.0 disables abstention, 1.0 abstains always. 0.8 is the evaluated operating point: on the test split it abstains on 48.4% of questions and cuts committed error from 47.8% to 10.1% (see model/docs/MODEL.md).",
+
+  "default_mitigated_prompt_style": "train",
+  "_default_mitigated_prompt_style": "which prompt mitigated mode uses when the caller passes no prompt_style. 'train' is the exact template the adapter was fine-tuned on. 'strict' is still selectable per call but must NOT be the default: it abstains on ~79% of val questions, which makes the system unusable.",
 
   "max_new_tokens": 48,
   "_max_new_tokens": "hard ceiling is 48; only ~0.18 GB of VRAM is free after the 4-bit model loads (see model/docs/FIT_TEST.md).",

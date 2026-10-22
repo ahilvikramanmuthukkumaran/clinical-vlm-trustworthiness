@@ -33,9 +33,10 @@ _CONFIG_PATH = _MODEL_DIR / "config.json"
 
 _DEFAULTS = {
     "model_id": "google/medgemma-4b-it",
-    "abstention_threshold": 0.6,
+    "abstention_threshold": 0.8,
     "max_new_tokens": 48,
     "min_yes_no_mass": 0.10,
+    "default_mitigated_prompt_style": "train",
     "abstain_answer": "cannot determine from this image",
 }
 
@@ -207,8 +208,9 @@ _BASELINE_PROMPT = (
     "Answer the following question about the image.\n\nQuestion: {question}"
 )
 
-# Training-free mitigation: the whole intervention is in this prompt for now. A
-# trained LoRA adapter can be plugged in later via adapter_path.
+# The "strict" prompt. Selectable, but NOT the mitigated default: evaluated at
+# threshold 0.8 it abstains on ~79% of val questions (70% of test), which makes
+# the system useless in practice. Kept for ablation and error analysis only.
 _MITIGATED_PROMPT = (
     "You are assisting with reading a medical image. Answer the question using "
     "ONLY what is visibly present in this image.\n"
@@ -229,8 +231,18 @@ PROMPT_STYLES = ("plain", "strict", "train")
 
 
 def default_prompt_style(mode: str) -> str:
-    """Which prompt a mode uses when prompt_style is not given."""
-    return "plain" if mode == "baseline" else "strict"
+    """Which prompt a mode uses when prompt_style is not given.
+
+    baseline  -> "plain" (and no adapter).
+    mitigated -> config.json's default_mitigated_prompt_style, "train" by
+                 default: the exact template the adapter was fine-tuned on.
+                 "strict" remains selectable per call but is deliberately not
+                 the default - see the note on _MITIGATED_PROMPT.
+    """
+    if mode == "baseline":
+        return "plain"
+    style = load_config()["default_mitigated_prompt_style"]
+    return style if style in PROMPT_STYLES else "train"
 
 
 def build_prompt(question: str, mode: str, abstain_answer: str,
@@ -344,15 +356,19 @@ def predict(
 ) -> Prediction:
     """Answer one clinical question about one image.
 
-    mode="baseline"  - plain prompt, never abstains.
-    mode="mitigated" - stricter visible-evidence prompt, abstains when the
-                       confidence falls below config.json's abstention_threshold.
-    adapter_path     - optional LoRA adapter directory, loaded with peft.
+    mode="baseline"  - plain prompt, no adapter, never abstains.
+    mode="mitigated" - abstains when the confidence falls below config.json's
+                       abstention_threshold (0.8 as evaluated). Uses the
+                       training template by default.
+    adapter_path     - optional LoRA adapter directory, loaded with peft. The
+                       evaluated system passes
+                       model/checkpoints/medgemma_vqarad_lora.
     prompt_style     - override the prompt: "plain", "strict" or "train".
-                       Default None keeps each mode's own prompt, so existing
-                       callers are unaffected: baseline -> "plain",
-                       mitigated -> "strict". "train" is the exact template the
-                       adapter was fine-tuned on.
+                       Default None keeps each mode's own prompt: baseline ->
+                       "plain", mitigated -> "train" (the exact template the
+                       adapter was fine-tuned on). "strict" is selectable but
+                       is not the default; it abstains on ~79% of val
+                       questions.
     """
     if mode not in ("baseline", "mitigated"):
         raise ValueError("mode must be 'baseline' or 'mitigated'")
