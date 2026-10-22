@@ -1,0 +1,12 @@
+{
+ "base_model": "google/medgemma-4b-it",
+ "prompt_template": "Answer the clinical question about this image briefly. {q}",
+ "lora_r": 16,
+ "lora_alpha": 32,
+ "train_compute_dtype": "float32",
+ "steps_done": 22,
+ "micro_batch": 4,
+ "accum": 4,
+ "train_samples_seen": 352,
+ "minutes": 79.1
+}

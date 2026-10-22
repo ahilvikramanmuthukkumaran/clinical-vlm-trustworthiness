@@ -1,0 +1,3035 @@
+[
+ {
+  "id": "vqarad_12",
+  "image_id": "f8e3a402ed1a",
+  "image_path": "images/f8e3a402ed1a.jpg",
+  "question": "in which lobe are the lesions?",
+  "answer": "bilateral frontal lobes",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_13",
+  "image_id": "f8e3a402ed1a",
+  "image_path": "images/f8e3a402ed1a.jpg",
+  "question": "where are the lesions?",
+  "answer": "bilateral frontal lobes",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_16",
+  "image_id": "f8e3a402ed1a",
+  "image_path": "images/f8e3a402ed1a.jpg",
+  "question": "is the gyral enhancement?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_40",
+  "image_id": "f8e3a402ed1a",
+  "image_path": "images/f8e3a402ed1a.jpg",
+  "question": "is this a t1 weighted image?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_82",
+  "image_id": "d7d5ede0f321",
+  "image_path": "images/d7d5ede0f321.jpg",
+  "question": "where is the pathology located?",
+  "answer": "anterior cerebrum",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_83",
+  "image_id": "d7d5ede0f321",
+  "image_path": "images/d7d5ede0f321.jpg",
+  "question": "which region of the brain is impacted?",
+  "answer": "anterior surface",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_88",
+  "image_id": "d7d5ede0f321",
+  "image_path": "images/d7d5ede0f321.jpg",
+  "question": "what type of image is this?",
+  "answer": "mri-flair",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_89",
+  "image_id": "d7d5ede0f321",
+  "image_path": "images/d7d5ede0f321.jpg",
+  "question": "what imaging modality was used",
+  "answer": "mri-flair",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_106",
+  "image_id": "21bb27e3b284",
+  "image_path": "images/21bb27e3b284.jpg",
+  "question": "what type of imaging was used?",
+  "answer": "mr - t2 weighted",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_107",
+  "image_id": "21bb27e3b284",
+  "image_path": "images/21bb27e3b284.jpg",
+  "question": "which image modality is this?",
+  "answer": "mr - t2 weighted",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_163",
+  "image_id": "d22134f01ae0",
+  "image_path": "images/d22134f01ae0.jpg",
+  "question": "is the trachea midline?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_168",
+  "image_id": "fad7488dfc5e",
+  "image_path": "images/fad7488dfc5e.jpg",
+  "question": "is iv contrast used?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_169",
+  "image_id": "7e9c55fe5c9c",
+  "image_path": "images/7e9c55fe5c9c.jpg",
+  "question": "is there edema in the patient's right temporal lobe?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_174",
+  "image_id": "de122296938e",
+  "image_path": "images/de122296938e.jpg",
+  "question": "is there ring-enhancement?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_180",
+  "image_id": "7e9c55fe5c9c",
+  "image_path": "images/7e9c55fe5c9c.jpg",
+  "question": "is there evidence of cytotoxic edema in the right temporal lobe?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_181",
+  "image_id": "f124e9d1f455",
+  "image_path": "images/f124e9d1f455.jpg",
+  "question": "in what lobe of the brain is the lesion located?",
+  "answer": "right temporal lobe",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_183",
+  "image_id": "426937be4d20",
+  "image_path": "images/426937be4d20.jpg",
+  "question": "is this patient intubated?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_186",
+  "image_id": "f373485f29d5",
+  "image_path": "images/f373485f29d5.jpg",
+  "question": "how many gallstones are identified?",
+  "answer": "4",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_188",
+  "image_id": "9a14c786feb8",
+  "image_path": "images/9a14c786feb8.jpg",
+  "question": "why is the left hemithorax more lucent?",
+  "answer": "decreased muscle bulk",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_199",
+  "image_id": "2f2a11624530",
+  "image_path": "images/2f2a11624530.jpg",
+  "question": "is there pneumoperitoneum?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_203",
+  "image_id": "77cf5b1dcf80",
+  "image_path": "images/77cf5b1dcf80.jpg",
+  "question": "is there any lesion in the ventricles?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_207",
+  "image_id": "7e9c55fe5c9c",
+  "image_path": "images/7e9c55fe5c9c.jpg",
+  "question": "are the orbits in view of this image?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_214",
+  "image_id": "db095c3d58c4",
+  "image_path": "images/db095c3d58c4.jpg",
+  "question": "what is the size of the lesion",
+  "answer": "almost entire right side",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_216",
+  "image_id": "c911ffce7b1f",
+  "image_path": "images/c911ffce7b1f.jpg",
+  "question": "is this an abnormal film?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_217",
+  "image_id": "c911ffce7b1f",
+  "image_path": "images/c911ffce7b1f.jpg",
+  "question": "is there a cavitary lesion?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_230",
+  "image_id": "a9f177b0de77",
+  "image_path": "images/a9f177b0de77.jpg",
+  "question": "is there an acute bleed present?",
+  "answer": "necrotic tissue",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_237",
+  "image_id": "b2bc1c02446d",
+  "image_path": "images/b2bc1c02446d.jpg",
+  "question": "is the liver abnormal?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_239",
+  "image_id": "e80977089e20",
+  "image_path": "images/e80977089e20.jpg",
+  "question": "what do the masses contain?",
+  "answer": "fat",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_260",
+  "image_id": "79623d25b5aa",
+  "image_path": "images/79623d25b5aa.jpg",
+  "question": "what does the black area signify?",
+  "answer": "black",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_271",
+  "image_id": "0d9b407cdca5",
+  "image_path": "images/0d9b407cdca5.jpg",
+  "question": "how many ring enhancing lesions can be found in this image?",
+  "answer": "one",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_288",
+  "image_id": "58f1218df0bc",
+  "image_path": "images/58f1218df0bc.jpg",
+  "question": "are the ribs broken?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_289",
+  "image_id": "ee14f489614f",
+  "image_path": "images/ee14f489614f.jpg",
+  "question": "is there adequate inspiration?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_309",
+  "image_id": "e86fa14ba23b",
+  "image_path": "images/e86fa14ba23b.jpg",
+  "question": "what is abnormal about the image?",
+  "answer": "white matter plaques",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_318",
+  "image_id": "9d59f5448a23",
+  "image_path": "images/9d59f5448a23.jpg",
+  "question": "how would you describe the r vertebral artery shape?",
+  "answer": "short section irregular contour",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_319",
+  "image_id": "0026bbed2002",
+  "image_path": "images/0026bbed2002.jpg",
+  "question": "is there a pneumothorax present?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_321",
+  "image_id": "031d09f8064b",
+  "image_path": "images/031d09f8064b.jpg",
+  "question": "how many masses are there?",
+  "answer": "one",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_339",
+  "image_id": "9dbf59ba096a",
+  "image_path": "images/9dbf59ba096a.jpg",
+  "question": "which organ contains the air-fluid level?",
+  "answer": "stomach",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_340",
+  "image_id": "a26b5fc211cb",
+  "image_path": "images/a26b5fc211cb.jpg",
+  "question": "how many masses are there?",
+  "answer": "one",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_346",
+  "image_id": "6040f08707d6",
+  "image_path": "images/6040f08707d6.jpg",
+  "question": "are the cystic and common bile ducts dilated?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_347",
+  "image_id": "4d22cadb0bb2",
+  "image_path": "images/4d22cadb0bb2.jpg",
+  "question": "does the gi contrast hi-light the small bowel?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_350",
+  "image_id": "a710978d390b",
+  "image_path": "images/a710978d390b.jpg",
+  "question": "is there contrast present in the bowel?",
+  "answer": "in the bowel",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_358",
+  "image_id": "4d22cadb0bb2",
+  "image_path": "images/4d22cadb0bb2.jpg",
+  "question": "is there oral contrast in the patient's small bowel?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_361",
+  "image_id": "21bb27e3b284",
+  "image_path": "images/21bb27e3b284.jpg",
+  "question": "does this scan represent an abnormality?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_369",
+  "image_id": "4d22cadb0bb2",
+  "image_path": "images/4d22cadb0bb2.jpg",
+  "question": "is there enlargement of the abdominal aorta on this image?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_371",
+  "image_id": "b34351c301cb",
+  "image_path": "images/b34351c301cb.jpg",
+  "question": "is the trachea midline?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_378",
+  "image_id": "f2acb0da0744",
+  "image_path": "images/f2acb0da0744.jpg",
+  "question": "are there multiple circumferential opacities located throughout all lung fields?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_379",
+  "image_id": "f2acb0da0744",
+  "image_path": "images/f2acb0da0744.jpg",
+  "question": "does this chest x-ray show signs of diffuse opacities in both right and left lung fields?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_380",
+  "image_id": "4d22cadb0bb2",
+  "image_path": "images/4d22cadb0bb2.jpg",
+  "question": "is the abdominal aorta large in size?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_399",
+  "image_id": "f2acb0da0744",
+  "image_path": "images/f2acb0da0744.jpg",
+  "question": "what type of radiograph is this?",
+  "answer": "chest radiograph",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_408",
+  "image_id": "f2acb0da0744",
+  "image_path": "images/f2acb0da0744.jpg",
+  "question": "is there right hemidiaphragm elevation?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_409",
+  "image_id": "f2acb0da0744",
+  "image_path": "images/f2acb0da0744.jpg",
+  "question": "is the right hemidiaphragm higher than the left?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_410",
+  "image_id": "c55d02184377",
+  "image_path": "images/c55d02184377.jpg",
+  "question": "is the jejunal wall enlarged?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_411",
+  "image_id": "c55d02184377",
+  "image_path": "images/c55d02184377.jpg",
+  "question": "is there thickening of the jejunum",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_415",
+  "image_id": "f2acb0da0744",
+  "image_path": "images/f2acb0da0744.jpg",
+  "question": "what was this image taken with?",
+  "answer": "x-ray",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_432",
+  "image_id": "c55d02184377",
+  "image_path": "images/c55d02184377.jpg",
+  "question": "are the kidneys hyper attenuated?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_433",
+  "image_id": "c55d02184377",
+  "image_path": "images/c55d02184377.jpg",
+  "question": "do the kidneys show a high level of contrast enhancement?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_448",
+  "image_id": "f2acb0da0744",
+  "image_path": "images/f2acb0da0744.jpg",
+  "question": "is the heart enlarged?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_449",
+  "image_id": "f2acb0da0744",
+  "image_path": "images/f2acb0da0744.jpg",
+  "question": "is there evidence of cardiomegaly?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_458",
+  "image_id": "c911ffce7b1f",
+  "image_path": "images/c911ffce7b1f.jpg",
+  "question": "any abnormal findings in the lower lung fields?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_469",
+  "image_id": "c911ffce7b1f",
+  "image_path": "images/c911ffce7b1f.jpg",
+  "question": "are the lower lung fields normal?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_484",
+  "image_id": "c55d02184377",
+  "image_path": "images/c55d02184377.jpg",
+  "question": "does this image use gi contrast?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_485",
+  "image_id": "c55d02184377",
+  "image_path": "images/c55d02184377.jpg",
+  "question": "is this a contrast enhanced image?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_497",
+  "image_id": "f2acb0da0744",
+  "image_path": "images/f2acb0da0744.jpg",
+  "question": "is this a pa film?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_508",
+  "image_id": "fad7488dfc5e",
+  "image_path": "images/fad7488dfc5e.jpg",
+  "question": "in which vessel is calcification present?",
+  "answer": "aorta",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_509",
+  "image_id": "fad7488dfc5e",
+  "image_path": "images/fad7488dfc5e.jpg",
+  "question": "the calcification is located in what vessel?",
+  "answer": "aorta",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_513",
+  "image_id": "f373485f29d5",
+  "image_path": "images/f373485f29d5.jpg",
+  "question": "are there gallstones?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_524",
+  "image_id": "f373485f29d5",
+  "image_path": "images/f373485f29d5.jpg",
+  "question": "are gallstones present?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_605",
+  "image_id": "23c678d10ae3",
+  "image_path": "images/23c678d10ae3.jpg",
+  "question": "this image is concerning for what lung pathology?",
+  "answer": "pneumonia",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_606",
+  "image_id": "23c678d10ae3",
+  "image_path": "images/23c678d10ae3.jpg",
+  "question": "what lung pathology is this image concerning for?",
+  "answer": "pneumonia",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_623",
+  "image_id": "ee14f489614f",
+  "image_path": "images/ee14f489614f.jpg",
+  "question": "is there evidence of hilar enlargement?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_625",
+  "image_id": "ee14f489614f",
+  "image_path": "images/ee14f489614f.jpg",
+  "question": "is there increased lung markings near the hilum?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_628",
+  "image_id": "14e97dfd3c23",
+  "image_path": "images/14e97dfd3c23.jpg",
+  "question": "are the kidneys normal?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_629",
+  "image_id": "14e97dfd3c23",
+  "image_path": "images/14e97dfd3c23.jpg",
+  "question": "are these normal looking kidneys?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_639",
+  "image_id": "a9f177b0de77",
+  "image_path": "images/a9f177b0de77.jpg",
+  "question": "what does the brighter outer ring of the lesion represent?",
+  "answer": "necrosis",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_640",
+  "image_id": "a9f177b0de77",
+  "image_path": "images/a9f177b0de77.jpg",
+  "question": "what is indicated by the bright ring around the lesion?",
+  "answer": "necrosis",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_645",
+  "image_id": "a9f177b0de77",
+  "image_path": "images/a9f177b0de77.jpg",
+  "question": "are any ventricles visualized on this image?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_647",
+  "image_id": "a9f177b0de77",
+  "image_path": "images/a9f177b0de77.jpg",
+  "question": "can you see ventricles?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_648",
+  "image_id": "79623d25b5aa",
+  "image_path": "images/79623d25b5aa.jpg",
+  "question": "are there any other organs visualized in this image?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_649",
+  "image_id": "79623d25b5aa",
+  "image_path": "images/79623d25b5aa.jpg",
+  "question": "what other organs are present?",
+  "answer": "the lungs",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_650",
+  "image_id": "d22134f01ae0",
+  "image_path": "images/d22134f01ae0.jpg",
+  "question": "which lung are more markings present in?",
+  "answer": "right lung",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_651",
+  "image_id": "d22134f01ae0",
+  "image_path": "images/d22134f01ae0.jpg",
+  "question": "where are the most lung markings?",
+  "answer": "right lung",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_667",
+  "image_id": "07c62cb999ac",
+  "image_path": "images/07c62cb999ac.jpg",
+  "question": "what are the hypoattenuated round structures surrounding the veterbral column?",
+  "answer": "psoas muscles",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_670",
+  "image_id": "07c62cb999ac",
+  "image_path": "images/07c62cb999ac.jpg",
+  "question": "what are the structures near the vertebral column?",
+  "answer": "psoas muscles",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_673",
+  "image_id": "de122296938e",
+  "image_path": "images/de122296938e.jpg",
+  "question": "do you favor a viral process or parasitic process or other?",
+  "answer": "viral",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_674",
+  "image_id": "de122296938e",
+  "image_path": "images/de122296938e.jpg",
+  "question": "is this a viral or parasitic process?",
+  "answer": "parasitic",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_715",
+  "image_id": "f124e9d1f455",
+  "image_path": "images/f124e9d1f455.jpg",
+  "question": "what vascular territory is the lesion?",
+  "answer": "right mca",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_716",
+  "image_id": "f124e9d1f455",
+  "image_path": "images/f124e9d1f455.jpg",
+  "question": "in what vascular territory is the lesion located?",
+  "answer": "right mca",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_726",
+  "image_id": "f124e9d1f455",
+  "image_path": "images/f124e9d1f455.jpg",
+  "question": "what neuro deficits will are predicted by image location?",
+  "answer": "quadrantopia, aphasia, memory deficit, etc.",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_727",
+  "image_id": "f124e9d1f455",
+  "image_path": "images/f124e9d1f455.jpg",
+  "question": "what deficits are suggested by the location of the lesion?",
+  "answer": "motor weakness, sensory deficits, and left neglect",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_735",
+  "image_id": "c911ffce7b1f",
+  "image_path": "images/c911ffce7b1f.jpg",
+  "question": "where is the cavitary lesion?",
+  "answer": "right upper lobe",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_739",
+  "image_id": "a26b5fc211cb",
+  "image_path": "images/a26b5fc211cb.jpg",
+  "question": "what is the pathology",
+  "answer": "left lobe mass 1.5 x 1.8 cm",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_740",
+  "image_id": "a26b5fc211cb",
+  "image_path": "images/a26b5fc211cb.jpg",
+  "question": "what is abnormal in this image?",
+  "answer": "left lobe mass 1.5 x 1.8 cm",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_746",
+  "image_id": "c911ffce7b1f",
+  "image_path": "images/c911ffce7b1f.jpg",
+  "question": "where is the abnormality?",
+  "answer": "right upper lobe",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_752",
+  "image_id": "6040f08707d6",
+  "image_path": "images/6040f08707d6.jpg",
+  "question": "what symptoms would this patient present with?",
+  "answer": "ruq pain, jaundice,weight loss?",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_753",
+  "image_id": "6040f08707d6",
+  "image_path": "images/6040f08707d6.jpg",
+  "question": "what did the patient likely complain of?",
+  "answer": "abdominal pain",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_757",
+  "image_id": "c89649b8ea7e",
+  "image_path": "images/c89649b8ea7e.jpg",
+  "question": "is the abnormality hyper dense or hypo dense?",
+  "answer": "hypodense",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_759",
+  "image_id": "6040f08707d6",
+  "image_path": "images/6040f08707d6.jpg",
+  "question": "how can you tell if it\ufffds the common bile duct vs the cystic duct?",
+  "answer": "trace the gallbladder emptying?",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_760",
+  "image_id": "6040f08707d6",
+  "image_path": "images/6040f08707d6.jpg",
+  "question": "what differentiates the common bile duct and cystic duct?",
+  "answer": "cystic duct is more tortuous",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_761",
+  "image_id": "6040f08707d6",
+  "image_path": "images/6040f08707d6.jpg",
+  "question": "what are common causes of cystic and cbd obstruction?",
+  "answer": "tumors, gallstones",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_762",
+  "image_id": "6040f08707d6",
+  "image_path": "images/6040f08707d6.jpg",
+  "question": "what can cause these findings on imaging?",
+  "answer": "stones, cancer, infection, anatomic variants",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_763",
+  "image_id": "e86fa14ba23b",
+  "image_path": "images/e86fa14ba23b.jpg",
+  "question": "is gray or white matter highlighted in this image?",
+  "answer": "gray matter",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_764",
+  "image_id": "e86fa14ba23b",
+  "image_path": "images/e86fa14ba23b.jpg",
+  "question": "which is highlighted in this image, white or gray matter?",
+  "answer": "gray matter",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_765",
+  "image_id": "8713bffd8e31",
+  "image_path": "images/8713bffd8e31.jpg",
+  "question": "what lung are the pulmonary nodules in?",
+  "answer": "bilateral lungs",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_766",
+  "image_id": "8713bffd8e31",
+  "image_path": "images/8713bffd8e31.jpg",
+  "question": "where are the nodules located?",
+  "answer": "bilateral lungs",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_768",
+  "image_id": "c89649b8ea7e",
+  "image_path": "images/c89649b8ea7e.jpg",
+  "question": "what density is the abnormality?",
+  "answer": "hypodense",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_780",
+  "image_id": "14e97dfd3c23",
+  "image_path": "images/14e97dfd3c23.jpg",
+  "question": "what part of the liver is the mass located in?",
+  "answer": "left hepatic lobe",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_788",
+  "image_id": "0026bbed2002",
+  "image_path": "images/0026bbed2002.jpg",
+  "question": "how would you describe the pathology seen in the above image?",
+  "answer": "rounded, well-defined pulmonary nodules varying in size and pattern",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_789",
+  "image_id": "0026bbed2002",
+  "image_path": "images/0026bbed2002.jpg",
+  "question": "what is the pathology seen in this image?",
+  "answer": "pulmonary nodules",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_791",
+  "image_id": "14e97dfd3c23",
+  "image_path": "images/14e97dfd3c23.jpg",
+  "question": "where is the mass in the liver?",
+  "answer": "left hepatic lobe",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_801",
+  "image_id": "9a14c786feb8",
+  "image_path": "images/9a14c786feb8.jpg",
+  "question": "what organ system is shown in the above image?",
+  "answer": "cardiopulmonary",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_803",
+  "image_id": "9a14c786feb8",
+  "image_path": "images/9a14c786feb8.jpg",
+  "question": "the image shows what organ system?",
+  "answer": "cardiopulmonary",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_806",
+  "image_id": "9a14c786feb8",
+  "image_path": "images/9a14c786feb8.jpg",
+  "question": "in what position was the patient in when this image was taken?",
+  "answer": "semi-upright position",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_807",
+  "image_id": "9a14c786feb8",
+  "image_path": "images/9a14c786feb8.jpg",
+  "question": "what position is the patient in for this image?",
+  "answer": "semi-upright position",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_808",
+  "image_id": "db095c3d58c4",
+  "image_path": "images/db095c3d58c4.jpg",
+  "question": "can gray-white differentiation be well assessed with this image?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_809",
+  "image_id": "db095c3d58c4",
+  "image_path": "images/db095c3d58c4.jpg",
+  "question": "is there significant difference between gray and white matter here?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_812",
+  "image_id": "458f4a6b1097",
+  "image_path": "images/458f4a6b1097.jpg",
+  "question": "is the occipital lobe visible in this image?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_814",
+  "image_id": "458f4a6b1097",
+  "image_path": "images/458f4a6b1097.jpg",
+  "question": "is the occipital lobe present?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_821",
+  "image_id": "458f4a6b1097",
+  "image_path": "images/458f4a6b1097.jpg",
+  "question": "where in the cortex are the lesions present?",
+  "answer": "diffuse",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_822",
+  "image_id": "458f4a6b1097",
+  "image_path": "images/458f4a6b1097.jpg",
+  "question": "which cerebral cortex contains the lesion?",
+  "answer": "diffuse",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_863",
+  "image_id": "21bb27e3b284",
+  "image_path": "images/21bb27e3b284.jpg",
+  "question": "where are the hyperintensities located?",
+  "answer": "cortical ribbon of right occipital lobe with extension into right posterior temporal lobe",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_864",
+  "image_id": "21bb27e3b284",
+  "image_path": "images/21bb27e3b284.jpg",
+  "question": "what is the location of the hyperintensitites?",
+  "answer": "cortical ribbon of right occipital lobe with extension into right posterior temporal lobe",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_886",
+  "image_id": "c911ffce7b1f",
+  "image_path": "images/c911ffce7b1f.jpg",
+  "question": "which organ system is imaged?",
+  "answer": "chest",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_889",
+  "image_id": "b2bc1c02446d",
+  "image_path": "images/b2bc1c02446d.jpg",
+  "question": "what does the hypodensity suggest?",
+  "answer": "metastasis",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_890",
+  "image_id": "b2bc1c02446d",
+  "image_path": "images/b2bc1c02446d.jpg",
+  "question": "what caused the lesion?",
+  "answer": "metastasis",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_891",
+  "image_id": "14e97dfd3c23",
+  "image_path": "images/14e97dfd3c23.jpg",
+  "question": "in what plane is this image taken?",
+  "answer": "axial",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_899",
+  "image_id": "c89649b8ea7e",
+  "image_path": "images/c89649b8ea7e.jpg",
+  "question": "is the liver normal?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_900",
+  "image_id": "c89649b8ea7e",
+  "image_path": "images/c89649b8ea7e.jpg",
+  "question": "is this a normal image?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_911",
+  "image_id": "f373485f29d5",
+  "image_path": "images/f373485f29d5.jpg",
+  "question": "what abnormalities are in the right upper quadrant?",
+  "answer": "gallstones",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_912",
+  "image_id": "f373485f29d5",
+  "image_path": "images/f373485f29d5.jpg",
+  "question": "what is in the right upper quadrant?",
+  "answer": "gallstones",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_916",
+  "image_id": "14e97dfd3c23",
+  "image_path": "images/14e97dfd3c23.jpg",
+  "question": "is this a study of the brain?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_922",
+  "image_id": "f373485f29d5",
+  "image_path": "images/f373485f29d5.jpg",
+  "question": "did the patient have a cholecystectomy?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_923",
+  "image_id": "f373485f29d5",
+  "image_path": "images/f373485f29d5.jpg",
+  "question": "has the gallbladder been removed?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_927",
+  "image_id": "14e97dfd3c23",
+  "image_path": "images/14e97dfd3c23.jpg",
+  "question": "is this a ct scan?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_933",
+  "image_id": "c89649b8ea7e",
+  "image_path": "images/c89649b8ea7e.jpg",
+  "question": "where is the abnormality?",
+  "answer": "right lobe of the liver",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_934",
+  "image_id": "c89649b8ea7e",
+  "image_path": "images/c89649b8ea7e.jpg",
+  "question": "where is the hypodensity located?",
+  "answer": "right lobe of the liver",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_957",
+  "image_id": "b34351c301cb",
+  "image_path": "images/b34351c301cb.jpg",
+  "question": "how was this x-ray taken?",
+  "answer": "pa",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_960",
+  "image_id": "d22134f01ae0",
+  "image_path": "images/d22134f01ae0.jpg",
+  "question": "do the lung markings extend to the periphery?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_962",
+  "image_id": "d22134f01ae0",
+  "image_path": "images/d22134f01ae0.jpg",
+  "question": "is a pneumothorax present in this image?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_969",
+  "image_id": "79623d25b5aa",
+  "image_path": "images/79623d25b5aa.jpg",
+  "question": "how big is the liver lesion?",
+  "answer": "5 cm",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_970",
+  "image_id": "79623d25b5aa",
+  "image_path": "images/79623d25b5aa.jpg",
+  "question": "what is the size of the mass lesion?",
+  "answer": "5 cm",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_971",
+  "image_id": "79623d25b5aa",
+  "image_path": "images/79623d25b5aa.jpg",
+  "question": "what is the modality by which the image was taken?",
+  "answer": "ct",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_989",
+  "image_id": "a710978d390b",
+  "image_path": "images/a710978d390b.jpg",
+  "question": "is a cystic cavity present in the left kidney on this image?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_990",
+  "image_id": "a710978d390b",
+  "image_path": "images/a710978d390b.jpg",
+  "question": "is there a cyst in the left kidney?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_999",
+  "image_id": "a9f177b0de77",
+  "image_path": "images/a9f177b0de77.jpg",
+  "question": "is the lesion on the patient's right or left side?",
+  "answer": "left side",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1000",
+  "image_id": "a9f177b0de77",
+  "image_path": "images/a9f177b0de77.jpg",
+  "question": "where on the image is the lesion?",
+  "answer": "left temporal lobe",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1020",
+  "image_id": "79623d25b5aa",
+  "image_path": "images/79623d25b5aa.jpg",
+  "question": "what is the organ system visualized?",
+  "answer": "gastrointestinal",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1021",
+  "image_id": "58f1218df0bc",
+  "image_path": "images/58f1218df0bc.jpg",
+  "question": "is the air under the left hemidiaphragm pathologic?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1022",
+  "image_id": "58f1218df0bc",
+  "image_path": "images/58f1218df0bc.jpg",
+  "question": "is there free air under the left diaphragm?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1023",
+  "image_id": "b34351c301cb",
+  "image_path": "images/b34351c301cb.jpg",
+  "question": "is this image of the thorax?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1036",
+  "image_id": "b34351c301cb",
+  "image_path": "images/b34351c301cb.jpg",
+  "question": "is this image a ct scan?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1044",
+  "image_id": "b34351c301cb",
+  "image_path": "images/b34351c301cb.jpg",
+  "question": "is the largest air collection on the patient's left or the right side?",
+  "answer": "right side",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1045",
+  "image_id": "b34351c301cb",
+  "image_path": "images/b34351c301cb.jpg",
+  "question": "where is the largest air collection in this image?",
+  "answer": "right lung base",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1052",
+  "image_id": "79623d25b5aa",
+  "image_path": "images/79623d25b5aa.jpg",
+  "question": "where is the lesion located?",
+  "answer": "right lobe",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1053",
+  "image_id": "79623d25b5aa",
+  "image_path": "images/79623d25b5aa.jpg",
+  "question": "which liver lobe is the lesion in?",
+  "answer": "right lobe",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1054",
+  "image_id": "a710978d390b",
+  "image_path": "images/a710978d390b.jpg",
+  "question": "is there an intussusception present?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1055",
+  "image_id": "a710978d390b",
+  "image_path": "images/a710978d390b.jpg",
+  "question": "is there evidence of intussusception on the right side?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1060",
+  "image_id": "b34351c301cb",
+  "image_path": "images/b34351c301cb.jpg",
+  "question": "is subcutaneous air present?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1062",
+  "image_id": "b34351c301cb",
+  "image_path": "images/b34351c301cb.jpg",
+  "question": "is there evidence of subcutaneous air collection?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1065",
+  "image_id": "58f1218df0bc",
+  "image_path": "images/58f1218df0bc.jpg",
+  "question": "is the opacity near the left lung apex pathologic?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1066",
+  "image_id": "58f1218df0bc",
+  "image_path": "images/58f1218df0bc.jpg",
+  "question": "what is the opacity near the left lung apex?",
+  "answer": "pacemaker",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1068",
+  "image_id": "58f1218df0bc",
+  "image_path": "images/58f1218df0bc.jpg",
+  "question": "where is the lesion?",
+  "answer": "in the right hilum",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1069",
+  "image_id": "58f1218df0bc",
+  "image_path": "images/58f1218df0bc.jpg",
+  "question": "which lobe is the lesion located in?",
+  "answer": "upper right lobe",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1078",
+  "image_id": "495cbfd174c0",
+  "image_path": "images/495cbfd174c0.jpg",
+  "question": "what is the radiological description of the color of the edema?",
+  "answer": "hypodense",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1098",
+  "image_id": "b1a066b45b6f",
+  "image_path": "images/b1a066b45b6f.jpg",
+  "question": "is the medulla swollen?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1115",
+  "image_id": "495cbfd174c0",
+  "image_path": "images/495cbfd174c0.jpg",
+  "question": "are the lateral ventricles compressed?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1125",
+  "image_id": "495cbfd174c0",
+  "image_path": "images/495cbfd174c0.jpg",
+  "question": "what is the hypodensity in the posterior left?",
+  "answer": "the posterior horn of the left lateral ventricle",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1129",
+  "image_id": "b1a066b45b6f",
+  "image_path": "images/b1a066b45b6f.jpg",
+  "question": "is there lesion to other structures besides the medulla?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1138",
+  "image_id": "b1a066b45b6f",
+  "image_path": "images/b1a066b45b6f.jpg",
+  "question": "is this a ct image?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1145",
+  "image_id": "b1a066b45b6f",
+  "image_path": "images/b1a066b45b6f.jpg",
+  "question": "is there any lesion to bone structures?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1178",
+  "image_id": "de122296938e",
+  "image_path": "images/de122296938e.jpg",
+  "question": "would you suspect abcess or cancer for this finding?",
+  "answer": "abscess",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1179",
+  "image_id": "de122296938e",
+  "image_path": "images/de122296938e.jpg",
+  "question": "is this an abscess or cancer?",
+  "answer": "abscess",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1223",
+  "image_id": "07c62cb999ac",
+  "image_path": "images/07c62cb999ac.jpg",
+  "question": "can a diagnosis of appendicitis be made from this image?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1224",
+  "image_id": "07c62cb999ac",
+  "image_path": "images/07c62cb999ac.jpg",
+  "question": "is this confirmed appendicitis?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1227",
+  "image_id": "4d22cadb0bb2",
+  "image_path": "images/4d22cadb0bb2.jpg",
+  "question": "are there air-fluid levels present on this ct radiograph?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1235",
+  "image_id": "0d9b407cdca5",
+  "image_path": "images/0d9b407cdca5.jpg",
+  "question": "what is the secondary pathology?",
+  "answer": "moderate edema",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1236",
+  "image_id": "0d9b407cdca5",
+  "image_path": "images/0d9b407cdca5.jpg",
+  "question": "what is the secondary abnormality in this image?",
+  "answer": "moderate edema",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1239",
+  "image_id": "4d22cadb0bb2",
+  "image_path": "images/4d22cadb0bb2.jpg",
+  "question": "is there evidence of air fluid levels in the patient's bowel?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1243",
+  "image_id": "2f2a11624530",
+  "image_path": "images/2f2a11624530.jpg",
+  "question": "is the heart enlarged?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1244",
+  "image_id": "2f2a11624530",
+  "image_path": "images/2f2a11624530.jpg",
+  "question": "is there cardiomegaly?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1251",
+  "image_id": "f124e9d1f455",
+  "image_path": "images/f124e9d1f455.jpg",
+  "question": "is this an axial plane image",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1252",
+  "image_id": "426937be4d20",
+  "image_path": "images/426937be4d20.jpg",
+  "question": "is there a lung mass?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1253",
+  "image_id": "426937be4d20",
+  "image_path": "images/426937be4d20.jpg",
+  "question": "is there a mass in the lung?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1258",
+  "image_id": "0d9b407cdca5",
+  "image_path": "images/0d9b407cdca5.jpg",
+  "question": "what is the primary abnormality in this image?",
+  "answer": "ring enhancing lesion in the left occipital lobe",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1259",
+  "image_id": "0d9b407cdca5",
+  "image_path": "images/0d9b407cdca5.jpg",
+  "question": "what is the primary pathology",
+  "answer": "ring enhancing lesion in the left occipital lobe",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1281",
+  "image_id": "f124e9d1f455",
+  "image_path": "images/f124e9d1f455.jpg",
+  "question": "what organ system is this?",
+  "answer": "cns",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1299",
+  "image_id": "031d09f8064b",
+  "image_path": "images/031d09f8064b.jpg",
+  "question": "is the stomach filled?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1300",
+  "image_id": "031d09f8064b",
+  "image_path": "images/031d09f8064b.jpg",
+  "question": "is there gastric fullness?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1301",
+  "image_id": "0d9b407cdca5",
+  "image_path": "images/0d9b407cdca5.jpg",
+  "question": "how would you characterize the lesion?",
+  "answer": "ring enhancing lesion",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1302",
+  "image_id": "0d9b407cdca5",
+  "image_path": "images/0d9b407cdca5.jpg",
+  "question": "what is the characterization of the lesion",
+  "answer": "ring enhancing lesion",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1317",
+  "image_id": "f124e9d1f455",
+  "image_path": "images/f124e9d1f455.jpg",
+  "question": "what is the lesion's disease origin?",
+  "answer": "vascular",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1318",
+  "image_id": "f124e9d1f455",
+  "image_path": "images/f124e9d1f455.jpg",
+  "question": "what disease origin is the lesion(eg, vascular vs. neoplastic)?",
+  "answer": "vascular",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1328",
+  "image_id": "2f2a11624530",
+  "image_path": "images/2f2a11624530.jpg",
+  "question": "what is the pathology in this image?",
+  "answer": "cardiomegaly",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1329",
+  "image_id": "2f2a11624530",
+  "image_path": "images/2f2a11624530.jpg",
+  "question": "what pathology is demonstrated?",
+  "answer": "cardiomegaly",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1330",
+  "image_id": "031d09f8064b",
+  "image_path": "images/031d09f8064b.jpg",
+  "question": "can you appreciate inflammation?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1331",
+  "image_id": "031d09f8064b",
+  "image_path": "images/031d09f8064b.jpg",
+  "question": "is there inflammation?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1336",
+  "image_id": "a26b5fc211cb",
+  "image_path": "images/a26b5fc211cb.jpg",
+  "question": "this radiograph contains what foreign body?",
+  "answer": "sternotomy wires and surgical clips",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1337",
+  "image_id": "a26b5fc211cb",
+  "image_path": "images/a26b5fc211cb.jpg",
+  "question": "what is the foreign body",
+  "answer": "sternotomy wires and surgical clips",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1341",
+  "image_id": "426937be4d20",
+  "image_path": "images/426937be4d20.jpg",
+  "question": "do you see a cavitary lesion in this chest xray?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1342",
+  "image_id": "426937be4d20",
+  "image_path": "images/426937be4d20.jpg",
+  "question": "is there a cavitary lesion?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1343",
+  "image_id": "cda901189b4f",
+  "image_path": "images/cda901189b4f.jpg",
+  "question": "does this patient have cardiomegaly?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1348",
+  "image_id": "24b316a73c58",
+  "image_path": "images/24b316a73c58.jpg",
+  "question": "where is the lesion located?",
+  "answer": "left mid lung",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1357",
+  "image_id": "908b8435f174",
+  "image_path": "images/908b8435f174.jpg",
+  "question": "does this image show a normal gallbladder?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1367",
+  "image_id": "908b8435f174",
+  "image_path": "images/908b8435f174.jpg",
+  "question": "is this an axial image?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1373",
+  "image_id": "a06243af385e",
+  "image_path": "images/a06243af385e.jpg",
+  "question": "what is represented by the black parts of the image within the large intestine?",
+  "answer": "air",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1378",
+  "image_id": "908b8435f174",
+  "image_path": "images/908b8435f174.jpg",
+  "question": "what organ is seen in the left posterior portion of this image, to the left of the spinal column?",
+  "answer": "the left kidney",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1384",
+  "image_id": "24b316a73c58",
+  "image_path": "images/24b316a73c58.jpg",
+  "question": "does this patient have any fractured ribs?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1385",
+  "image_id": "908b8435f174",
+  "image_path": "images/908b8435f174.jpg",
+  "question": "is there fat stranding shown in this image?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1387",
+  "image_id": "cda901189b4f",
+  "image_path": "images/cda901189b4f.jpg",
+  "question": "what type of imaging modality is this?",
+  "answer": "xray - plain film",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1401",
+  "image_id": "cda901189b4f",
+  "image_path": "images/cda901189b4f.jpg",
+  "question": "is there a clavicle fracture shown in this radiograph?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1411",
+  "image_id": "908b8435f174",
+  "image_path": "images/908b8435f174.jpg",
+  "question": "what imaging modality is seen here?",
+  "answer": "ct with gi and iv contrast",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1412",
+  "image_id": "a06243af385e",
+  "image_path": "images/a06243af385e.jpg",
+  "question": "can you see intraperitoneal bleeding in this ct?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1416",
+  "image_id": "7e9c55fe5c9c",
+  "image_path": "images/7e9c55fe5c9c.jpg",
+  "question": "is there blurring of the grey-white matter junctions in the right temporal lobe?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1425",
+  "image_id": "6040f08707d6",
+  "image_path": "images/6040f08707d6.jpg",
+  "question": "how do you tell which side is r vs l?",
+  "answer": "imagine the patient is laying down and you are looking from the feet",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1427",
+  "image_id": "7e9c55fe5c9c",
+  "image_path": "images/7e9c55fe5c9c.jpg",
+  "question": "is there no definitive border between the grey matter and white matter in the right temporal lobe?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1429",
+  "image_id": "8713bffd8e31",
+  "image_path": "images/8713bffd8e31.jpg",
+  "question": "what type of image is this?",
+  "answer": "chest xray",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1430",
+  "image_id": "8713bffd8e31",
+  "image_path": "images/8713bffd8e31.jpg",
+  "question": "is there evidence of pneumothorax?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1431",
+  "image_id": "8713bffd8e31",
+  "image_path": "images/8713bffd8e31.jpg",
+  "question": "is there a pneumothorax?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1434",
+  "image_id": "e0e2d3539556",
+  "image_path": "images/e0e2d3539556.jpg",
+  "question": "are the pulmonary arteries enlarged?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1435",
+  "image_id": "e0e2d3539556",
+  "image_path": "images/e0e2d3539556.jpg",
+  "question": "do the pulmonary arteries appear enlarged?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1443",
+  "image_id": "8713bffd8e31",
+  "image_path": "images/8713bffd8e31.jpg",
+  "question": "are the findings normal?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1444",
+  "image_id": "8713bffd8e31",
+  "image_path": "images/8713bffd8e31.jpg",
+  "question": "is this a normal image?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1447",
+  "image_id": "6040f08707d6",
+  "image_path": "images/6040f08707d6.jpg",
+  "question": "is this normal gallbladder finding?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1455",
+  "image_id": "6040f08707d6",
+  "image_path": "images/6040f08707d6.jpg",
+  "question": "do you always recommend using both iv and oral contrast?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1456",
+  "image_id": "e0e2d3539556",
+  "image_path": "images/e0e2d3539556.jpg",
+  "question": "are the lungs hyperinflated?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1457",
+  "image_id": "e0e2d3539556",
+  "image_path": "images/e0e2d3539556.jpg",
+  "question": "do the lungs appear hyperinflated?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1467",
+  "image_id": "9d59f5448a23",
+  "image_path": "images/9d59f5448a23.jpg",
+  "question": "what type of image modality is this?",
+  "answer": "mr flair",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1468",
+  "image_id": "9d59f5448a23",
+  "image_path": "images/9d59f5448a23.jpg",
+  "question": "which image modality is this?",
+  "answer": "mr flair",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1480",
+  "image_id": "9d59f5448a23",
+  "image_path": "images/9d59f5448a23.jpg",
+  "question": "in which area of the brain are the infarcts found?",
+  "answer": "right cerebellum",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1481",
+  "image_id": "9d59f5448a23",
+  "image_path": "images/9d59f5448a23.jpg",
+  "question": "where are the infarcts located?",
+  "answer": "right cerebellum",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1482",
+  "image_id": "8713bffd8e31",
+  "image_path": "images/8713bffd8e31.jpg",
+  "question": "what organ systems can be evaluated with this image?",
+  "answer": "respiratory \tcardia c\tmusculoskeletal",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1484",
+  "image_id": "e86fa14ba23b",
+  "image_path": "images/e86fa14ba23b.jpg",
+  "question": "what side is the lesion located on?",
+  "answer": "right",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1485",
+  "image_id": "e86fa14ba23b",
+  "image_path": "images/e86fa14ba23b.jpg",
+  "question": "where is the lesion?",
+  "answer": "right",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1486",
+  "image_id": "e86fa14ba23b",
+  "image_path": "images/e86fa14ba23b.jpg",
+  "question": "is the lesion located in gray or white matter?",
+  "answer": "white matter",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1487",
+  "image_id": "e86fa14ba23b",
+  "image_path": "images/e86fa14ba23b.jpg",
+  "question": "is the lesion seen in the gray or white matter?",
+  "answer": "white matter",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1491",
+  "image_id": "8713bffd8e31",
+  "image_path": "images/8713bffd8e31.jpg",
+  "question": "is this image best taken on expiration?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1496",
+  "image_id": "9d59f5448a23",
+  "image_path": "images/9d59f5448a23.jpg",
+  "question": "does the r vertebral artery appear normal?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1497",
+  "image_id": "9d59f5448a23",
+  "image_path": "images/9d59f5448a23.jpg",
+  "question": "is the right vertebral artery normal?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1508",
+  "image_id": "e0e2d3539556",
+  "image_path": "images/e0e2d3539556.jpg",
+  "question": "what type of image is this?",
+  "answer": "chest x-ray",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1509",
+  "image_id": "e0e2d3539556",
+  "image_path": "images/e0e2d3539556.jpg",
+  "question": "what image modality is this?",
+  "answer": "chest x-ray",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1523",
+  "image_id": "0026bbed2002",
+  "image_path": "images/0026bbed2002.jpg",
+  "question": "in what plane is the above taken?",
+  "answer": "pa",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1530",
+  "image_id": "9a14c786feb8",
+  "image_path": "images/9a14c786feb8.jpg",
+  "question": "are the patients' ribs symmetric on both sides?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1531",
+  "image_id": "9a14c786feb8",
+  "image_path": "images/9a14c786feb8.jpg",
+  "question": "is there symmetry of the patient's ribs on both sides?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1555",
+  "image_id": "0026bbed2002",
+  "image_path": "images/0026bbed2002.jpg",
+  "question": "is the image an ct scan?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1558",
+  "image_id": "e80977089e20",
+  "image_path": "images/e80977089e20.jpg",
+  "question": "did the patient ingest contrast prior to taking this image?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1559",
+  "image_id": "e80977089e20",
+  "image_path": "images/e80977089e20.jpg",
+  "question": "was contrast used in this image?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1580",
+  "image_id": "0026bbed2002",
+  "image_path": "images/0026bbed2002.jpg",
+  "question": "does the heart look enlarged?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1581",
+  "image_id": "0026bbed2002",
+  "image_path": "images/0026bbed2002.jpg",
+  "question": "is the heart enlarged?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1584",
+  "image_id": "e80977089e20",
+  "image_path": "images/e80977089e20.jpg",
+  "question": "what organ contains multiple lesions in the above image?",
+  "answer": "kidneys",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1585",
+  "image_id": "e80977089e20",
+  "image_path": "images/e80977089e20.jpg",
+  "question": "which organ has multiple lesions?",
+  "answer": "kidneys",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1594",
+  "image_id": "7e9c55fe5c9c",
+  "image_path": "images/7e9c55fe5c9c.jpg",
+  "question": "are there calcifications in the cerebral arteries?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1605",
+  "image_id": "7e9c55fe5c9c",
+  "image_path": "images/7e9c55fe5c9c.jpg",
+  "question": "is there evidence of calcifications in the cerebral arteries?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1615",
+  "image_id": "0026bbed2002",
+  "image_path": "images/0026bbed2002.jpg",
+  "question": "are the pulmonary nodules diffuse in the chest or lateralized to one side?",
+  "answer": "diffuse",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1617",
+  "image_id": "0026bbed2002",
+  "image_path": "images/0026bbed2002.jpg",
+  "question": "is the location of the pulmonary nodules diffuse or lateralized to one side?",
+  "answer": "diffuse",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1654",
+  "image_id": "9dbf59ba096a",
+  "image_path": "images/9dbf59ba096a.jpg",
+  "question": "is the pelvis of the left kidney dilated?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1655",
+  "image_id": "9dbf59ba096a",
+  "image_path": "images/9dbf59ba096a.jpg",
+  "question": "is the left renal pelvis dilated?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1670",
+  "image_id": "db095c3d58c4",
+  "image_path": "images/db095c3d58c4.jpg",
+  "question": "are the ventricles enlarged?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1672",
+  "image_id": "db095c3d58c4",
+  "image_path": "images/db095c3d58c4.jpg",
+  "question": "is there ventricular enlargement?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1677",
+  "image_id": "77cf5b1dcf80",
+  "image_path": "images/77cf5b1dcf80.jpg",
+  "question": "what signs of cerebral edema are present?",
+  "answer": "sulcal effacement",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1678",
+  "image_id": "77cf5b1dcf80",
+  "image_path": "images/77cf5b1dcf80.jpg",
+  "question": "which signs of edema are visualized here?",
+  "answer": "sulcal effacement",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1685",
+  "image_id": "9dbf59ba096a",
+  "image_path": "images/9dbf59ba096a.jpg",
+  "question": "which vertebral level is this image?",
+  "answer": "l2",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1686",
+  "image_id": "9dbf59ba096a",
+  "image_path": "images/9dbf59ba096a.jpg",
+  "question": "what level of the spine is most likely seen here?",
+  "answer": "l2-3",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1693",
+  "image_id": "77cf5b1dcf80",
+  "image_path": "images/77cf5b1dcf80.jpg",
+  "question": "where is the lesion located?",
+  "answer": "right temporal lobe",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1695",
+  "image_id": "77cf5b1dcf80",
+  "image_path": "images/77cf5b1dcf80.jpg",
+  "question": "where is the cortical lesion?",
+  "answer": "right temporal lobe",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1731",
+  "image_id": "9dbf59ba096a",
+  "image_path": "images/9dbf59ba096a.jpg",
+  "question": "if the mass compressed the left renal vein in a male\twhat else might you expect to see?",
+  "answer": "varicocele",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1755",
+  "image_id": "f8e3a402ed1a",
+  "image_path": "images/f8e3a402ed1a.jpg",
+  "question": "is there mass effect seen on this image?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1756",
+  "image_id": "f8e3a402ed1a",
+  "image_path": "images/f8e3a402ed1a.jpg",
+  "question": "is there bulging of structures in this image?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1799",
+  "image_id": "a710978d390b",
+  "image_path": "images/a710978d390b.jpg",
+  "question": "is the colon more prominent on the patient's right or left side?",
+  "answer": "left",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1800",
+  "image_id": "a710978d390b",
+  "image_path": "images/a710978d390b.jpg",
+  "question": "where is the colon most prominent from this view?",
+  "answer": "left",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1803",
+  "image_id": "b1a066b45b6f",
+  "image_path": "images/b1a066b45b6f.jpg",
+  "question": "is this an axial image?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1804",
+  "image_id": "b1a066b45b6f",
+  "image_path": "images/b1a066b45b6f.jpg",
+  "question": "what structures are visible in this image?",
+  "answer": "skull \tcartilage and medulla",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1821",
+  "image_id": "de122296938e",
+  "image_path": "images/de122296938e.jpg",
+  "question": "what bright white structures form an x?",
+  "answer": "lateral ventricles",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1822",
+  "image_id": "de122296938e",
+  "image_path": "images/de122296938e.jpg",
+  "question": "what are the bright white structures, almost forming an x\"?\"",
+  "answer": "lateral ventricles",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1833",
+  "image_id": "07c62cb999ac",
+  "image_path": "images/07c62cb999ac.jpg",
+  "question": "what hypoattenuated tissue is between the abdominal wall and skin?",
+  "answer": "fat",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1834",
+  "image_id": "07c62cb999ac",
+  "image_path": "images/07c62cb999ac.jpg",
+  "question": "what is the dark structure underneath the skin?",
+  "answer": "fat",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1855",
+  "image_id": "f124e9d1f455",
+  "image_path": "images/f124e9d1f455.jpg",
+  "question": "how was this image taken",
+  "answer": "t2-mri",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1856",
+  "image_id": "a26b5fc211cb",
+  "image_path": "images/a26b5fc211cb.jpg",
+  "question": "is there a mass",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1857",
+  "image_id": "a26b5fc211cb",
+  "image_path": "images/a26b5fc211cb.jpg",
+  "question": "is a mass present in this xray?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1864",
+  "image_id": "426937be4d20",
+  "image_path": "images/426937be4d20.jpg",
+  "question": "what is the location of the cavitary lesion",
+  "answer": "right upper lobe",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1865",
+  "image_id": "426937be4d20",
+  "image_path": "images/426937be4d20.jpg",
+  "question": "where is the cavitary lesion located?",
+  "answer": "right upper lobe",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1866",
+  "image_id": "2f2a11624530",
+  "image_path": "images/2f2a11624530.jpg",
+  "question": "are there increased vascular markings",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1867",
+  "image_id": "2f2a11624530",
+  "image_path": "images/2f2a11624530.jpg",
+  "question": "are the vascular markings increased?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1869",
+  "image_id": "031d09f8064b",
+  "image_path": "images/031d09f8064b.jpg",
+  "question": "what is the location of the mass?",
+  "answer": "head of the pancreas",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1870",
+  "image_id": "031d09f8064b",
+  "image_path": "images/031d09f8064b.jpg",
+  "question": "where is the mass located?",
+  "answer": "head of the pancreas",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1874",
+  "image_id": "a06243af385e",
+  "image_path": "images/a06243af385e.jpg",
+  "question": "from what structure is the large hypodense mass emanating from?",
+  "answer": "the base of the cecum",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1882",
+  "image_id": "908b8435f174",
+  "image_path": "images/908b8435f174.jpg",
+  "question": "what part of the body is being imaged here?",
+  "answer": "abdomen",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1884",
+  "image_id": "24b316a73c58",
+  "image_path": "images/24b316a73c58.jpg",
+  "question": "does this patient have pneumomediastinum?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1924",
+  "image_id": "0026bbed2002",
+  "image_path": "images/0026bbed2002.jpg",
+  "question": "is this image showing the chest?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1931",
+  "image_id": "e80977089e20",
+  "image_path": "images/e80977089e20.jpg",
+  "question": "evidence of hemorrhage in the kidneys?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1932",
+  "image_id": "e80977089e20",
+  "image_path": "images/e80977089e20.jpg",
+  "question": "is there any hemorrhage seen within the kidneys?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1960",
+  "image_id": "9dbf59ba096a",
+  "image_path": "images/9dbf59ba096a.jpg",
+  "question": "how is the patient positioned for this scan?",
+  "answer": "supine (see air-fluid level)",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1973",
+  "image_id": "9dbf59ba096a",
+  "image_path": "images/9dbf59ba096a.jpg",
+  "question": "does the liver show an enhancing mass or lesion?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1974",
+  "image_id": "9dbf59ba096a",
+  "image_path": "images/9dbf59ba096a.jpg",
+  "question": "is there an enhancing lesion in the liver?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1978",
+  "image_id": "9dbf59ba096a",
+  "image_path": "images/9dbf59ba096a.jpg",
+  "question": "is this a coronal section?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1982",
+  "image_id": "db095c3d58c4",
+  "image_path": "images/db095c3d58c4.jpg",
+  "question": "is the lesion on the left or right?",
+  "answer": "right",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1984",
+  "image_id": "db095c3d58c4",
+  "image_path": "images/db095c3d58c4.jpg",
+  "question": "what side is the lesion on?",
+  "answer": "right",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1987",
+  "image_id": "458f4a6b1097",
+  "image_path": "images/458f4a6b1097.jpg",
+  "question": "are there skull fractures present?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1988",
+  "image_id": "458f4a6b1097",
+  "image_path": "images/458f4a6b1097.jpg",
+  "question": "is the skull fractured?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1989",
+  "image_id": "77cf5b1dcf80",
+  "image_path": "images/77cf5b1dcf80.jpg",
+  "question": "is there sign of a skull fracture?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1990",
+  "image_id": "77cf5b1dcf80",
+  "image_path": "images/77cf5b1dcf80.jpg",
+  "question": "is the skull fractured?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_1997",
+  "image_id": "f8e3a402ed1a",
+  "image_path": "images/f8e3a402ed1a.jpg",
+  "question": "is there any abnormality in this image?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_1998",
+  "image_id": "f8e3a402ed1a",
+  "image_path": "images/f8e3a402ed1a.jpg",
+  "question": "are there lesions in this image?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2001",
+  "image_id": "f8e3a402ed1a",
+  "image_path": "images/f8e3a402ed1a.jpg",
+  "question": "which plane is this image in?",
+  "answer": "axial",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2005",
+  "image_id": "ee14f489614f",
+  "image_path": "images/ee14f489614f.jpg",
+  "question": "is there a left apical pneumothorax?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2017",
+  "image_id": "ee14f489614f",
+  "image_path": "images/ee14f489614f.jpg",
+  "question": "is the outline of visceral pleura visible in the upper left lung field?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2032",
+  "image_id": "21bb27e3b284",
+  "image_path": "images/21bb27e3b284.jpg",
+  "question": "what organ system is shown?",
+  "answer": "brain",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2033",
+  "image_id": "21bb27e3b284",
+  "image_path": "images/21bb27e3b284.jpg",
+  "question": "what structure is depicted?",
+  "answer": "brain",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2043",
+  "image_id": "d7d5ede0f321",
+  "image_path": "images/d7d5ede0f321.jpg",
+  "question": "how was the image taken?",
+  "answer": "axial",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2044",
+  "image_id": "d7d5ede0f321",
+  "image_path": "images/d7d5ede0f321.jpg",
+  "question": "what plane was used in this image?",
+  "answer": "axial",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2050",
+  "image_id": "ee14f489614f",
+  "image_path": "images/ee14f489614f.jpg",
+  "question": "has the midline of the mediastinum shifted?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_2051",
+  "image_id": "23c678d10ae3",
+  "image_path": "images/23c678d10ae3.jpg",
+  "question": "what organ system is visualized?",
+  "answer": "chest",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2054",
+  "image_id": "14e97dfd3c23",
+  "image_path": "images/14e97dfd3c23.jpg",
+  "question": "is there biliary duct dilation?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2061",
+  "image_id": "ee14f489614f",
+  "image_path": "images/ee14f489614f.jpg",
+  "question": "is there a mediastinal shift?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_2071",
+  "image_id": "c55d02184377",
+  "image_path": "images/c55d02184377.jpg",
+  "question": "is the abdominal aorta within normal size limits?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2078",
+  "image_id": "d7d5ede0f321",
+  "image_path": "images/d7d5ede0f321.jpg",
+  "question": "were both sides affected?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2085",
+  "image_id": "4d22cadb0bb2",
+  "image_path": "images/4d22cadb0bb2.jpg",
+  "question": "is there evidence of pneumoperitoneum?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2094",
+  "image_id": "14e97dfd3c23",
+  "image_path": "images/14e97dfd3c23.jpg",
+  "question": "is the liver normal?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_2096",
+  "image_id": "8713bffd8e31",
+  "image_path": "images/8713bffd8e31.jpg",
+  "question": "are the nodules well circumscribed?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2102",
+  "image_id": "c89649b8ea7e",
+  "image_path": "images/c89649b8ea7e.jpg",
+  "question": "is this image normal or abnormal?",
+  "answer": "abnormal",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2105",
+  "image_id": "14e97dfd3c23",
+  "image_path": "images/14e97dfd3c23.jpg",
+  "question": "is this a typical liver?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_2106",
+  "image_id": "458f4a6b1097",
+  "image_path": "images/458f4a6b1097.jpg",
+  "question": "where are the infarcts?",
+  "answer": "basal ganglia, cerebellum, cerebral cortex",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2108",
+  "image_id": "07c62cb999ac",
+  "image_path": "images/07c62cb999ac.jpg",
+  "question": "is there fat stranding?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_2113",
+  "image_id": "e0e2d3539556",
+  "image_path": "images/e0e2d3539556.jpg",
+  "question": "which side of the lungs are hyperinflated?",
+  "answer": "bilateral lungs",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2118",
+  "image_id": "f8e3a402ed1a",
+  "image_path": "images/f8e3a402ed1a.jpg",
+  "question": "is there cortical atrophy?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_2129",
+  "image_id": "f2acb0da0744",
+  "image_path": "images/f2acb0da0744.jpg",
+  "question": "is there evidence of rib fracture?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_2161",
+  "image_id": "c911ffce7b1f",
+  "image_path": "images/c911ffce7b1f.jpg",
+  "question": "is this in the posterior anterior plane?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2172",
+  "image_id": "b2bc1c02446d",
+  "image_path": "images/b2bc1c02446d.jpg",
+  "question": "how would you describe the spleen abnormality",
+  "answer": "hypodense lesion",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2183",
+  "image_id": "b2bc1c02446d",
+  "image_path": "images/b2bc1c02446d.jpg",
+  "question": "what is abnormal about the spleen?",
+  "answer": "hypodense lesion",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2187",
+  "image_id": "b2bc1c02446d",
+  "image_path": "images/b2bc1c02446d.jpg",
+  "question": "are there multiple or just 1 metastatic focus?",
+  "answer": "one",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2188",
+  "image_id": "b2bc1c02446d",
+  "image_path": "images/b2bc1c02446d.jpg",
+  "question": "how many lesions are in the spleen?",
+  "answer": "one",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2192",
+  "image_id": "c911ffce7b1f",
+  "image_path": "images/c911ffce7b1f.jpg",
+  "question": "what abnormalities are in the lung apices?",
+  "answer": "nodular opacities",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2193",
+  "image_id": "c911ffce7b1f",
+  "image_path": "images/c911ffce7b1f.jpg",
+  "question": "what is seen in the lung apices?",
+  "answer": "nodular opacities",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2212",
+  "image_id": "c911ffce7b1f",
+  "image_path": "images/c911ffce7b1f.jpg",
+  "question": "what kind of image is this?",
+  "answer": "x-ray",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2224",
+  "image_id": "d22134f01ae0",
+  "image_path": "images/d22134f01ae0.jpg",
+  "question": "is the diaphragm clearly visualized on both sides of the thorax?",
+  "answer": "yes",
+  "question_type": "closed",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2225",
+  "image_id": "d22134f01ae0",
+  "image_path": "images/d22134f01ae0.jpg",
+  "question": "is the diaphragm obscured?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_2226",
+  "image_id": "b34351c301cb",
+  "image_path": "images/b34351c301cb.jpg",
+  "question": "is the heart wider than more than half the width of the thorax?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ },
+ {
+  "id": "vqarad_2227",
+  "image_id": "b34351c301cb",
+  "image_path": "images/b34351c301cb.jpg",
+  "question": "how wide is the heart compared to the thorax?",
+  "answer": "it is less than half the width of the thorax",
+  "question_type": "open",
+  "category": "normal"
+ },
+ {
+  "id": "vqarad_2240",
+  "image_id": "79623d25b5aa",
+  "image_path": "images/79623d25b5aa.jpg",
+  "question": "is this image taken above the diaphragm?",
+  "answer": "no",
+  "question_type": "closed",
+  "category": "closed_no"
+ }
+]

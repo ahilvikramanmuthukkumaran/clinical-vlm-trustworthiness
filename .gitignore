@@ -219,3 +219,24 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Credentials, tokens and API keys - never commit these.
+# Added by model development; see model/docs/SETUP.md (log in with
+# huggingface-cli login rather than putting a token in the repo).
+kaggle.json
+.kaggle/
+access_token
+access_token.*
+*token*.txt
+*token*.json
+hf_token*
+.hf_token
+secrets.json
+secrets.yaml
+credentials
+credentials.*
+*.pem
+*.key
+*.p12
+id_rsa*
+id_ed25519*
