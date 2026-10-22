@@ -172,7 +172,7 @@ Measured by the project owner, not on this laptop.
 Platform: **Kaggle T4 (compute capability 7.5)**, MedGemma-4B-it in 4-bit NF4.
 A short dtype test covering both generation and a few training steps.
 
-| dtype | logits | generated output | peak VRAM | s per micro-batch step (batch size not recorded, likely 1) | generation time |
+| dtype | logits | generated output | peak VRAM | seconds per micro-batch step (batch size not recorded, likely 1) | generation time |
 |---|---|---|---|---|---|
 | **fp16** | **NaN** | **empty (only token id 0)** | 5.85 GB | — | — |
 | bf16 (emulated) | finite | valid sentence | 5.81 GB | 14.8 / 15.6 / 15.2 s | 2.7 s |
@@ -184,9 +184,10 @@ Kaggle notebook ran with float32 compute.
 ### These are micro-batch steps, not optimiser steps
 
 The timings above are **forward+backward on one micro-batch**, not full
-optimiser steps, and must not be used to plan a training run. In the actual
-training run a real optimiser step took about **184-216 s** at an **effective
-batch of 16**.
+optimiser steps, and must not be used to plan a training run.
+
+**A real optimiser step took about 184-216 s on a Kaggle T4, at an effective
+batch of 16 (micro-batch 4 x gradient accumulation 4).**
 
 That is consistent with the adapter's `train_info.json`, which reports
 `micro_batch: 4`, `accum: 4` (= effective batch 16), `steps_done: 22`,
