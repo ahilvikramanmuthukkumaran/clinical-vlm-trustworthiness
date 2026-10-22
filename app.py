@@ -26,26 +26,20 @@ for folder in (MODEL_DIR, MODEL_SRC):
         sys.path.insert(0, str(folder))
 
 # ============================================================
-# IMPORT MODEL MODULE
-# Load predict.py from its actual path to avoid editor
-# unresolved-import warnings caused by dynamic sys.path edits.
+# IMPORT MODEL
 # ============================================================
 predict = None
 MODEL_IMPORT_ERROR = None
 
 try:
     if not PREDICT_PATH.is_file():
-        raise FileNotFoundError(
-            f"Prediction module not found: {PREDICT_PATH}"
-        )
+        raise FileNotFoundError(f"Prediction module not found: {PREDICT_PATH}")
 
     spec = importlib.util.spec_from_file_location(
-        "clinical_vlm_predict",
-        PREDICT_PATH,
+        "clinical_vlm_predict", PREDICT_PATH
     )
-
     if spec is None or spec.loader is None:
-        raise ImportError("Could not create a loader for predict.py")
+        raise ImportError("Could not load model/src/predict.py")
 
     predict_module = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = predict_module
@@ -55,18 +49,15 @@ try:
 except Exception as exc:
     MODEL_IMPORT_ERROR = f"{type(exc).__name__}: {exc}"
 
-# Import the existing question validator.
 try:
     from validation import validate_question
+    VALIDATION_IMPORT_ERROR = None
 except Exception as exc:
     validate_question = None
     VALIDATION_IMPORT_ERROR = f"{type(exc).__name__}: {exc}"
-else:
-    VALIDATION_IMPORT_ERROR = None
-
 
 # ============================================================
-# PAGE CONFIGURATION AND STYLING
+# PAGE CONFIGURATION
 # ============================================================
 st.set_page_config(
     page_title="Clinical VLM Trustworthiness",
@@ -80,10 +71,9 @@ st.markdown(
     <style>
     .block-container {
         max-width: 1450px;
-        padding-top: 1.8rem;
+        padding-top: 1.7rem;
         padding-bottom: 2.5rem;
     }
-
     .hero {
         padding: 2rem;
         border-radius: 18px;
@@ -95,7 +85,6 @@ st.markdown(
             rgba(65,155,135,.10)
         );
     }
-
     .hero-kicker {
         text-transform: uppercase;
         letter-spacing: .14em;
@@ -103,14 +92,12 @@ st.markdown(
         opacity: .78;
         margin-bottom: .65rem;
     }
-
     .hero-title {
         font-size: 2.4rem;
         font-weight: 780;
         line-height: 1.15;
         margin: 0;
     }
-
     .hero-subtitle {
         font-size: 1.05rem;
         opacity: .84;
@@ -118,20 +105,17 @@ st.markdown(
         max-width: 900px;
         line-height: 1.6;
     }
-
     .section-note {
         opacity: .78;
         font-size: .95rem;
         margin-bottom: 1rem;
     }
-
     .answer-panel {
         padding: 1.4rem;
         border-radius: 14px;
         border: 1px solid rgba(128,128,128,.3);
         margin: .7rem 0 1rem 0;
     }
-
     .answer-label {
         text-transform: uppercase;
         font-size: .75rem;
@@ -139,14 +123,12 @@ st.markdown(
         opacity: .7;
         margin-bottom: .65rem;
     }
-
     .answer-text {
         font-size: 1.35rem;
         line-height: 1.65;
         font-weight: 550;
         overflow-wrap: anywhere;
     }
-
     div[data-testid="stMetric"] {
         padding: .85rem;
         border: 1px solid rgba(128,128,128,.22);
@@ -160,13 +142,13 @@ st.markdown(
 st.markdown(
     """
     <div class="hero">
-        <div class="hero-kicker">NLP Research Prototype</div>
-        <div class="hero-title">Clinical VLM Trustworthiness</div>
-        <div class="hero-subtitle">
-            Evaluating answer consistency, confidence, and hallucination-related
-            risks in medical vision-language models using medical visual
-            question-answering data.
-        </div>
+      <div class="hero-kicker">NLP Research Prototype</div>
+      <div class="hero-title">Clinical VLM Trustworthiness</div>
+      <div class="hero-subtitle">
+        Evaluating answer consistency, confidence, and hallucination-related
+        risks in medical vision-language models using medical visual
+        question-answering data.
+      </div>
     </div>
     """,
     unsafe_allow_html=True,
@@ -176,31 +158,23 @@ with st.sidebar:
     st.header("Project Overview")
     st.write(
         "Compare baseline MedGemma responses with a LoRA-adapted model "
-        "and examine the saved test-set evaluation results."
+        "and review test-set evaluation results."
     )
     st.divider()
     st.markdown(
-        """
-        **Project components**
-        - Medical image upload
-        - Clinical question validation
-        - Baseline and mitigated modes
-        - Evaluation metrics
-        """
+        "- Medical image upload\n"
+        "- Clinical question validation\n"
+        "- Baseline and mitigated modes\n"
+        "- Test-set evaluation"
     )
-    st.caption(
-        "Academic research prototype. Not intended for diagnosis or treatment."
-    )
-
+    st.caption("Academic research prototype. Not intended for diagnosis or treatment.")
 
 # ============================================================
-# IMAGE INPUT AND PREDICTION CONTROLS
+# INPUT INTERFACE
 # ============================================================
 st.header("1. Medical Image Analysis")
 st.markdown(
-    '<div class="section-note">'
-    'Upload a medical image, enter a clinical question, and select a mode.'
-    '</div>',
+    '<div class="section-note">Upload a medical image, enter a question, and select a model configuration.</div>',
     unsafe_allow_html=True,
 )
 
@@ -231,6 +205,9 @@ with input_col:
         use_container_width=True,
     )
 
+# ============================================================
+# IMAGE VALIDATION AND PREVIEW
+# ============================================================
 image = None
 
 with preview_col:
@@ -259,17 +236,17 @@ with preview_col:
             image = None
             st.error("Invalid image. Please upload a valid PNG or JPEG file.")
 
-
 # ============================================================
-# PREDICTION EXECUTION
+# PREDICTION AND EVALUATION ARE TRIGGERED BY THE BUTTON
 # ============================================================
 if run_prediction:
+    # ---------------- Validate inputs ----------------
     if image is None:
         st.error("Please upload a valid medical image.")
         st.stop()
 
     if validate_question is None:
-        st.error("The question validation module could not be imported.")
+        st.error("Question validator could not be imported.")
         st.code(VALIDATION_IMPORT_ERROR or "Unknown import error")
         st.stop()
 
@@ -280,7 +257,7 @@ if run_prediction:
         st.stop()
 
     if predict is None:
-        st.error("The model prediction module could not be imported.")
+        st.error("Model prediction module could not be imported.")
         st.code(MODEL_IMPORT_ERROR or "Unknown import error")
         st.stop()
 
@@ -288,12 +265,9 @@ if run_prediction:
 
     if mode == "mitigated" and not ADAPTER.is_dir():
         st.error(f"Trained adapter folder not found: {ADAPTER}")
-        st.info(
-            "The adapter checkpoint must be present in the environment "
-            "running this application."
-        )
         st.stop()
 
+    # ---------------- Run prediction ----------------
     try:
         with st.spinner(
             "Generating prediction. First-time model loading may take a while..."
@@ -315,37 +289,29 @@ if run_prediction:
 
         if result.is_stub:
             st.warning(
-                "Stub output: the real model did not run. "
-                "This is a placeholder answer, not a genuine model prediction."
+                "Stub output: the real model did not run. This is a placeholder, "
+                "not a genuine model prediction."
             )
         elif result.abstained:
             st.warning("The model abstained from answering.")
         else:
             st.success("A model response was returned.")
 
-        # Escape output before placing it inside HTML.
         safe_answer = escape(str(result.answer))
 
         st.markdown(
             f"""
             <div class="answer-panel">
-                <div class="answer-label">Model Answer</div>
-                <div class="answer-text">{safe_answer}</div>
+              <div class="answer-label">Model Answer</div>
+              <div class="answer-text">{safe_answer}</div>
             </div>
             """,
             unsafe_allow_html=True,
         )
 
         col1, col2, col3 = st.columns(3)
-
-        col1.metric(
-            "Reported Confidence",
-            f"{result.confidence:.1%}",
-        )
-        col2.metric(
-            "Prediction Mode",
-            result.mode.capitalize(),
-        )
+        col1.metric("Reported Confidence", f"{result.confidence:.1%}")
+        col2.metric("Prediction Mode", result.mode.capitalize())
         col3.metric(
             "Abstained",
             "Yes" if result.abstained else "No",
@@ -353,15 +319,12 @@ if run_prediction:
 
         if result.is_stub:
             st.caption(
-                "The answer and confidence shown above are placeholders "
-                "because live inference did not run."
+                "The answer and confidence are placeholders because live "
+                "inference did not run."
             )
 
         with st.expander("Technical Details"):
-            st.write(
-                "**Stub output:**",
-                "Yes" if result.is_stub else "No",
-            )
+            st.write("**Stub output:**", "Yes" if result.is_stub else "No")
             st.write(
                 "**Adapter:**",
                 str(ADAPTER) if mode == "mitigated" else "None (baseline)",
@@ -373,116 +336,52 @@ if run_prediction:
         st.error("Prediction failed.")
         st.code(f"{type(exc).__name__}: {exc}")
         st.info(
-            "Check model dependencies, model access, available hardware, "
-            "adapter files, and available memory."
+            "Check model dependencies, model access, hardware, adapter files, "
+            "and available memory."
         )
 
+    # ========================================================
+    # EVALUATION DASHBOARD — ONLY SHOWN AFTER BUTTON CLICK
+    # ========================================================
+    st.divider()
+    st.header("3. Model Evaluation Dashboard")
+    st.markdown(
+        '<div class="section-note">Comparison of previously saved baseline and LoRA-adapter test predictions.</div>',
+        unsafe_allow_html=True,
+    )
 
-# ============================================================
-# SAVED EVALUATION DASHBOARD
-# ============================================================
-st.divider()
-st.header("3. Model Evaluation Dashboard")
-st.markdown(
-    '<div class="section-note">'
-    'Comparative evaluation of previously generated baseline and '
-    'LoRA-adapter test predictions.'
-    '</div>',
-    unsafe_allow_html=True,
-)
+    if SUMMARY_PATH.exists():
+        try:
+            with SUMMARY_PATH.open("r", encoding="utf-8") as file:
+                summary = json.load(file)
 
+            baseline = summary["baseline"]
+            adapter = summary["adapter_train"]
+            paired = summary["paired_comparison"]
+            alignment = summary["dataset_alignment"]
 
-def display_metric(container, label, value, percentage=False, suffix=""):
-    if value is None:
-        container.metric(label, "N/A")
-    elif percentage:
-        container.metric(label, f"{value:.2%}")
-    else:
-        container.metric(label, f"{value:.4f}{suffix}")
-
-
-if SUMMARY_PATH.exists():
-    try:
-        with SUMMARY_PATH.open("r", encoding="utf-8") as file:
-            summary = json.load(file)
-
-        baseline = summary["baseline"]
-        adapter = summary["adapter_train"]
-        paired = summary["paired_comparison"]
-        alignment = summary["dataset_alignment"]
-
-        exact_delta = paired.get(
-            "adapter_minus_baseline_exact_match_rate"
-        )
-
-        top1, top2, top3 = st.columns(3)
-
-        top1.metric(
-            "Matched Test Examples",
-            alignment.get("matched_unique_ids", "N/A"),
-        )
-
-        top2.metric(
-            "Baseline Exact Match",
-            (
-                f"{baseline['exact_match_rate']:.2%}"
-                if baseline.get("exact_match_rate") is not None
-                else "N/A"
-            ),
-        )
-
-        top3.metric(
-            "Adapter Exact Match",
-            (
-                f"{adapter['exact_match_rate']:.2%}"
-                if adapter.get("exact_match_rate") is not None
-                else "N/A"
-            ),
-            delta=(
-                f"{exact_delta:+.2%}"
-                if exact_delta is not None
-                else None
-            ),
-        )
-
-        baseline_col, adapter_col = st.columns(2, gap="large")
-
-        with baseline_col:
-            st.subheader("Baseline Model")
-
-            b1, b2 = st.columns(2)
-            display_metric(
-                b1,
-                "Exact-Match Rate",
-                baseline.get("exact_match_rate"),
-                percentage=True,
-            )
-            display_metric(
-                b2,
-                "Mean Token F1",
-                baseline.get("mean_token_f1"),
+            exact_delta = paired.get(
+                "adapter_minus_baseline_exact_match_rate"
             )
 
-            b1, b2 = st.columns(2)
-            display_metric(
-                b1,
-                "Mean Reported Confidence",
-                baseline.get("mean_reported_confidence"),
-                percentage=True,
-            )
-            display_metric(
-                b2,
-                "Mean Generation Time",
-                baseline.get("mean_generation_seconds"),
-                suffix=" s",
+            top1, top2, top3 = st.columns(3)
+
+            top1.metric(
+                "Matched Test Examples",
+                alignment.get("matched_unique_ids", "N/A"),
             )
 
-        with adapter_col:
-            st.subheader("Mitigated Model (LoRA)")
+            top2.metric(
+                "Baseline Exact Match",
+                (
+                    f"{baseline['exact_match_rate']:.2%}"
+                    if baseline.get("exact_match_rate") is not None
+                    else "N/A"
+                ),
+            )
 
-            a1, a2 = st.columns(2)
-            a1.metric(
-                "Exact-Match Rate",
+            top3.metric(
+                "Adapter Exact Match",
                 (
                     f"{adapter['exact_match_rate']:.2%}"
                     if adapter.get("exact_match_rate") is not None
@@ -494,65 +393,129 @@ if SUMMARY_PATH.exists():
                     else None
                 ),
             )
-            display_metric(
-                a2,
-                "Mean Token F1",
-                adapter.get("mean_token_f1"),
-            )
 
-            a1, a2 = st.columns(2)
-            display_metric(
-                a1,
-                "Mean Reported Confidence",
-                adapter.get("mean_reported_confidence"),
-                percentage=True,
-            )
-            display_metric(
-                a2,
-                "Mean Generation Time",
-                adapter.get("mean_generation_seconds"),
-                suffix=" s",
-            )
+            baseline_col, adapter_col = st.columns(2, gap="large")
 
-        st.subheader("Paired Test-Set Comparison")
+            with baseline_col:
+                st.subheader("Baseline Model")
 
-        pair1, pair2 = st.columns(2)
-
-        pair1.metric(
-            "Baseline Mismatch → Adapter Exact Match",
-            paired.get("baseline_wrong_adapter_exact", "N/A"),
-        )
-        pair2.metric(
-            "Baseline Exact Match → Adapter Mismatch",
-            paired.get("baseline_exact_adapter_not", "N/A"),
-        )
-
-        st.caption(
-            "Exact match and token F1 measure lexical similarity to reference "
-            "answers. They do not independently establish clinical correctness "
-            "or a validated hallucination rate. Confidence is not necessarily "
-            "calibrated. This dashboard displays saved results and does not "
-            "run new model inference."
-        )
-
-        with st.expander("View Full Evaluation Report"):
-            if REPORT_PATH.exists():
-                st.markdown(
-                    REPORT_PATH.read_text(encoding="utf-8")
+                b1, b2 = st.columns(2)
+                b1.metric(
+                    "Exact-Match Rate",
+                    (
+                        f"{baseline['exact_match_rate']:.2%}"
+                        if baseline.get("exact_match_rate") is not None
+                        else "N/A"
+                    ),
                 )
-            else:
-                st.json(summary)
+                b2.metric(
+                    "Mean Token F1",
+                    (
+                        f"{baseline['mean_token_f1']:.4f}"
+                        if baseline.get("mean_token_f1") is not None
+                        else "N/A"
+                    ),
+                )
 
-    except (KeyError, TypeError, ValueError, OSError) as exc:
-        st.error("The saved evaluation summary could not be loaded.")
-        st.code(f"{type(exc).__name__}: {exc}")
+                b1, b2 = st.columns(2)
+                b1.metric(
+                    "Mean Reported Confidence",
+                    (
+                        f"{baseline['mean_reported_confidence']:.2%}"
+                        if baseline.get("mean_reported_confidence") is not None
+                        else "N/A"
+                    ),
+                )
+                b2.metric(
+                    "Mean Generation Time",
+                    (
+                        f"{baseline['mean_generation_seconds']:.2f} s"
+                        if baseline.get("mean_generation_seconds") is not None
+                        else "N/A"
+                    ),
+                )
 
-else:
-    st.info(
-        "Evaluation summary not found. Run `python evaluate_results.py` "
-        "from the project root to generate it."
-    )
+            with adapter_col:
+                st.subheader("Mitigated Model (LoRA)")
 
+                a1, a2 = st.columns(2)
+                a1.metric(
+                    "Exact-Match Rate",
+                    (
+                        f"{adapter['exact_match_rate']:.2%}"
+                        if adapter.get("exact_match_rate") is not None
+                        else "N/A"
+                    ),
+                    delta=(
+                        f"{exact_delta:+.2%}"
+                        if exact_delta is not None
+                        else None
+                    ),
+                )
+                a2.metric(
+                    "Mean Token F1",
+                    (
+                        f"{adapter['mean_token_f1']:.4f}"
+                        if adapter.get("mean_token_f1") is not None
+                        else "N/A"
+                    ),
+                )
+
+                a1, a2 = st.columns(2)
+                a1.metric(
+                    "Mean Reported Confidence",
+                    (
+                        f"{adapter['mean_reported_confidence']:.2%}"
+                        if adapter.get("mean_reported_confidence") is not None
+                        else "N/A"
+                    ),
+                )
+                a2.metric(
+                    "Mean Generation Time",
+                    (
+                        f"{adapter['mean_generation_seconds']:.2f} s"
+                        if adapter.get("mean_generation_seconds") is not None
+                        else "N/A"
+                    ),
+                )
+
+            st.subheader("Paired Test-Set Comparison")
+
+            pair1, pair2 = st.columns(2)
+            pair1.metric(
+                "Baseline Mismatch → Adapter Exact Match",
+                paired.get("baseline_wrong_adapter_exact", "N/A"),
+            )
+            pair2.metric(
+                "Baseline Exact Match → Adapter Mismatch",
+                paired.get("baseline_exact_adapter_not", "N/A"),
+            )
+
+            st.caption(
+                "Exact match and token F1 measure lexical similarity to reference "
+                "answers. They do not independently establish clinical correctness "
+                "or a validated hallucination rate. Confidence is not necessarily "
+                "calibrated. The dashboard displays saved test predictions and "
+                "does not run additional inference."
+            )
+
+            with st.expander("View Full Evaluation Report"):
+                if REPORT_PATH.exists():
+                    st.markdown(
+                        REPORT_PATH.read_text(encoding="utf-8")
+                    )
+                else:
+                    st.json(summary)
+
+        except (KeyError, TypeError, ValueError, OSError) as exc:
+            st.error("The saved evaluation summary could not be loaded.")
+            st.code(f"{type(exc).__name__}: {exc}")
+
+    else:
+        st.info(
+            "Evaluation summary not found. Run `python evaluate_results.py` "
+            "from the project root to generate it."
+        )
 
 # ============================================================
 # FOOTER
