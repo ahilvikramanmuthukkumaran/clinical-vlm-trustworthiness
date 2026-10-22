@@ -16,6 +16,7 @@ the same reason - importing this module does not require them.
 from __future__ import annotations
 
 import json
+import math
 import os
 import re
 import threading
@@ -86,12 +87,30 @@ def load_config() -> dict:
 _lock = threading.Lock()
 _cache: dict = {"key": None, "model": None, "processor": None}
 
+#: Diagnostics for the most recent predict() generation. Callers use this to
+#: detect a broken numeric setup (e.g. fp16 NaN logits on a T4) which cannot be
+#: expressed through Prediction's fixed fields. Overwritten on every call.
+LAST_GENERATION: dict = {
+    "scores_finite": None,     # True/False: every generated step's logits finite
+    "non_finite_steps": None,  # how many steps contained NaN/Inf
+    "new_tokens": None,        # number of tokens generated
+    "text_empty": None,        # True if the decoded text is blank
+    "dtype": None,             # compute dtype actually used
+    "device_capability": None, # e.g. "8.6"
+}
+
 
 def cuda_available() -> bool:
-    """True only if torch is installed and reports a usable CUDA device."""
+    """True only if torch is importable and reports a usable CUDA device.
+
+    Importing torch can fail with more than ImportError. On this machine
+    Windows Smart App Control blocked torch's unsigned torch_python.dll, which
+    surfaces as OSError [WinError 4551]. Any import failure means "no usable
+    GPU stack", so callers get the stub rather than a crash.
+    """
     try:
         import torch
-    except ImportError:
+    except Exception:  # noqa: BLE001 - ImportError, OSError (blocked DLL), etc.
         return False
     try:
         return torch.cuda.is_available()
@@ -99,27 +118,61 @@ def cuda_available() -> bool:
         return False
 
 
+#: GPUs from compute capability 8.0 (Ampere) up have bf16 tensor cores.
+_NATIVE_BF16_MAJOR = 8
+
+
+def compute_dtype(torch):
+    """bfloat16 only on GPUs with NATIVE bf16, otherwise float32. Never float16.
+
+    float16 is deliberately excluded: on a Kaggle T4 this model produces NaN
+    logits and empty output in fp16 (measured by the project owner). bf16
+    emulated and float32 both work, and the adapter was trained with float32
+    compute, so float32 is the safe fallback.
+
+    The test is compute capability >= 8.0, not torch.cuda.is_bf16_supported():
+    recent torch reports True on a T4 because it will emulate bf16, which is
+    not what we want to select on. An RTX 3050 is 8.6 and takes the bf16 path;
+    a T4 is 7.5 and takes float32.
+    """
+    try:
+        if torch.cuda.is_available():
+            major, _minor = torch.cuda.get_device_capability(0)
+            if major >= _NATIVE_BF16_MAJOR:
+                return torch.bfloat16
+    except Exception:  # noqa: BLE001 - never let a probe failure pick fp16
+        pass
+    return torch.float32
+
+
 def _build_model(model_id: str, adapter_path: Optional[str]):
     """Load the 4-bit model and processor. Settings verified in FIT_TEST.md."""
     import torch
     from transformers import AutoModelForImageTextToText, AutoProcessor, BitsAndBytesConfig
 
+    dtype = compute_dtype(torch)
+
     quantisation = BitsAndBytesConfig(
         load_in_4bit=True,
         bnb_4bit_quant_type="nf4",
         bnb_4bit_use_double_quant=True,
-        bnb_4bit_compute_dtype=torch.bfloat16,
+        # Same dtype for the 4-bit compute and, via dtype= below, for every
+        # module bitsandbytes leaves unquantised (embeddings, norms, lm_head).
+        # Mixing fp32 weights with an fp16 compute dtype is what produced the
+        # NaN logits on a T4, so the two must not diverge.
+        bnb_4bit_compute_dtype=dtype,
     )
 
     processor = AutoProcessor.from_pretrained(model_id)
     model = AutoModelForImageTextToText.from_pretrained(
         model_id,
         quantization_config=quantisation,
-        # device_map="auto" is NOT usable here: on a 4 GB card accelerate reserves
-        # activation headroom, decides the model will not fit and refuses to place
-        # it. Forcing GPU 0 is the configuration measured to work.
+        # device_map="auto" is NOT usable on a 4 GB card: accelerate reserves
+        # activation headroom, decides the model will not fit and refuses to
+        # place it. Forcing GPU 0 is the configuration measured to work, and is
+        # also correct on a single-GPU T4.
         device_map={"": 0},
-        dtype=torch.bfloat16,
+        dtype=dtype,
     )
 
     if adapter_path:
@@ -166,12 +219,36 @@ _MITIGATED_PROMPT = (
     'exactly: "{abstain}"\n\nQuestion: {question}'
 )
 
+# Copied verbatim from the adapter's train_info.json "prompt_template". The {q}
+# placeholder is substituted literally rather than reformatted, so this is
+# provably the string the adapter was fine-tuned on. Use prompt_style="train"
+# to remove the train/inference prompt mismatch as a confound.
+_TRAIN_PROMPT_TEMPLATE = "Answer the clinical question about this image briefly. {q}"
 
-def _build_messages(image: Image.Image, question: str, mode: str, abstain_answer: str):
-    if mode == "mitigated":
-        text = _MITIGATED_PROMPT.format(question=question, abstain=abstain_answer)
-    else:
-        text = _BASELINE_PROMPT.format(question=question)
+PROMPT_STYLES = ("plain", "strict", "train")
+
+
+def default_prompt_style(mode: str) -> str:
+    """Which prompt a mode uses when prompt_style is not given."""
+    return "plain" if mode == "baseline" else "strict"
+
+
+def build_prompt(question: str, mode: str, abstain_answer: str,
+                 prompt_style: Optional[str] = None) -> str:
+    """Render the user-turn text for one question."""
+    style = prompt_style or default_prompt_style(mode)
+    if style not in PROMPT_STYLES:
+        raise ValueError(f"prompt_style must be one of {PROMPT_STYLES}, got {style!r}")
+    if style == "train":
+        return _TRAIN_PROMPT_TEMPLATE.replace("{q}", question)
+    if style == "strict":
+        return _MITIGATED_PROMPT.format(question=question, abstain=abstain_answer)
+    return _BASELINE_PROMPT.format(question=question)
+
+
+def _build_messages(image: Image.Image, question: str, mode: str, abstain_answer: str,
+                    prompt_style: Optional[str] = None):
+    text = build_prompt(question, mode, abstain_answer, prompt_style)
     return [{
         "role": "user",
         "content": [{"type": "image", "image": image}, {"type": "text", "text": text}],
@@ -263,6 +340,7 @@ def predict(
     question: str,
     mode: Mode = "baseline",
     adapter_path: Optional[str] = None,
+    prompt_style: Optional[str] = None,
 ) -> Prediction:
     """Answer one clinical question about one image.
 
@@ -270,6 +348,11 @@ def predict(
     mode="mitigated" - stricter visible-evidence prompt, abstains when the
                        confidence falls below config.json's abstention_threshold.
     adapter_path     - optional LoRA adapter directory, loaded with peft.
+    prompt_style     - override the prompt: "plain", "strict" or "train".
+                       Default None keeps each mode's own prompt, so existing
+                       callers are unaffected: baseline -> "plain",
+                       mitigated -> "strict". "train" is the exact template the
+                       adapter was fine-tuned on.
     """
     if mode not in ("baseline", "mitigated"):
         raise ValueError("mode must be 'baseline' or 'mitigated'")
@@ -286,7 +369,7 @@ def predict(
     import torch
 
     model, processor = get_model(adapter_path=adapter_path, model_id=config["model_id"])
-    messages = _build_messages(image, question, mode, abstain_answer)
+    messages = _build_messages(image, question, mode, abstain_answer, prompt_style)
     inputs = processor.apply_chat_template(
         messages, add_generation_prompt=True, tokenize=True,
         return_dict=True, return_tensors="pt",
@@ -308,6 +391,21 @@ def predict(
     raw_text = processor.decode(sequences[0][prompt_len:], skip_special_tokens=True)
     answer = _clean(raw_text)
 
+    # Record whether the numerics held up. A broken dtype choice shows up here
+    # as non-finite logits and/or empty text, which no Prediction field can
+    # express - callers check LAST_GENERATION and abort.
+    non_finite_steps = sum(
+        0 if bool(torch.isfinite(step_logits).all()) else 1 for step_logits in scores
+    )
+    LAST_GENERATION.update({
+        "scores_finite": non_finite_steps == 0 and bool(scores),
+        "non_finite_steps": non_finite_steps,
+        "new_tokens": int(sequences.shape[1] - prompt_len),
+        "text_empty": not raw_text.strip(),
+        "dtype": str(compute_dtype(torch)),
+        "device_capability": "%d.%d" % torch.cuda.get_device_capability(0),
+    })
+
     confidence = None
     if scores:
         if is_closed_question(question):
@@ -317,7 +415,9 @@ def predict(
             )
         if confidence is None:
             confidence = _mean_token_probability(scores, sequences, prompt_len)
-    if confidence is None:
+    # NaN must be caught before clamping: min()/max() compare False against NaN
+    # and would quietly return 1.0, turning broken logits into max confidence.
+    if confidence is None or not math.isfinite(float(confidence)):
         confidence = 0.0
     confidence = max(0.0, min(1.0, float(confidence)))
 

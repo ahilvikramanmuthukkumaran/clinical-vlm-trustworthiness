@@ -57,9 +57,25 @@ An Application Control policy has blocked this file.
 ```
 
 This takes down `pyarrow.compute`, `pandas` 3.0.6 (which now hard-depends on
-pyarrow) and `datasets` 5.1.0. It did **not** affect the fit test — torch,
-transformers, peft and bitsandbytes are all fine — but it will block Stage 2
-data work. Two ways out, neither applied yet because both are the owner's call:
+pyarrow) and `datasets` 5.1.0. At the time the fit test ran it did **not**
+affect torch, transformers, peft or bitsandbytes — every number in §2 was
+measured with the GPU stack working normally.
+
+**Update: the same policy later blocked torch itself.** Hours after the fit
+test, on the same machine with no reinstall, `import torch` began failing:
+
+```
+OSError: [WinError 4551] An Application Control policy has blocked this file.
+Error loading ...\.venv\Lib\site-packages\torch\lib\torch_python.dll
+```
+
+`torch_python.dll` is unsigned (`Get-AuthenticodeSignature` → `NotSigned`), and
+enforcement evidently re-evaluated it. **No local inference or training is
+possible while this holds**, which is why evaluation moved to a Kaggle notebook
+(`model/notebooks/medgemma_eval.ipynb`). Everything in §2 predates the block and
+still stands; nothing new can be measured locally until it is resolved.
+
+Two ways out, neither applied yet because both are the owner's call:
 
 - Pin `pandas<3` and skip `datasets` entirely. The test split is plain JSON
   (`data/splits/test.json`, see `INTERFACE.md`), so Arrow is not actually needed.
@@ -117,6 +133,11 @@ Neither MedGemma configuration fits. The reference measurements in §2.1 confirm
 the test harness itself can register a genuine fit, so these two "no" results are
 a property of the model on this card, not of the measurement.
 
+The `s/step` column here is **batch size 1 with no gradient accumulation**, so
+each step is both a micro-batch step and a full optimiser step and the two
+readings coincide. That is not true of the T4 table further down, where the
+per-step figures are micro-batch steps only.
+
 ### How "does not fit" was detected — this matters
 
 **None of these runs ever raised CUDA out-of-memory.** On Windows WDDM the NVIDIA
@@ -144,6 +165,90 @@ at **281 tokens, identical to 448 px**. Gemma 3's vision tower is fixed at 896×
 internally, so `--image-size` is inert, and the loss over a 262k-token vocab is a
 fixed cost. There is no setting that makes it fit; 41 hours per 1000 steps is the
 best case observed.
+
+### Numeric precision on a Kaggle T4 — float16 is unusable
+
+Measured by the project owner, not on this laptop.
+Platform: **Kaggle T4 (compute capability 7.5)**, MedGemma-4B-it in 4-bit NF4.
+A short dtype test covering both generation and a few training steps.
+
+| dtype | logits | generated output | peak VRAM | s per micro-batch step (batch size not recorded, likely 1) | generation time |
+|---|---|---|---|---|---|
+| **fp16** | **NaN** | **empty (only token id 0)** | 5.85 GB | — | — |
+| bf16 (emulated) | finite | valid sentence | 5.81 GB | 14.8 / 15.6 / 15.2 s | 2.7 s |
+| **float32** | finite | valid sentence | 7.58 GB | 12.8 / 13.4 / 13.9 s | 2.4 s |
+
+**Conclusion: use float32 compute on a T4. Never use fp16.** Training in the
+Kaggle notebook ran with float32 compute.
+
+### These are micro-batch steps, not optimiser steps
+
+The timings above are **forward+backward on one micro-batch**, not full
+optimiser steps, and must not be used to plan a training run. In the actual
+training run a real optimiser step took about **184-216 s** at an **effective
+batch of 16**.
+
+That is consistent with the adapter's `train_info.json`, which reports
+`micro_batch: 4`, `accum: 4` (= effective batch 16), `steps_done: 22`,
+`train_samples_seen: 352` (22 x 16) and `minutes: 79.1`. 79.1 min over 22
+optimiser steps is **215.7 s per optimiser step**, at the top of that range.
+
+Dividing further, 215.7 s / 16 samples is ~13.5 s per sample, which matches the
+12.8-13.9 s float32 figures in the table above — consistent with those having
+been measured at micro-batch 1, though the batch size was not recorded, so
+"likely 1" remains an inference rather than a fact.
+
+This also accounts for the whole wall-clock time: 22 optimiser steps at ~200 s
+is ~73 min of 79.1 min, so the run was essentially all training steps, with
+little unexplained overhead.
+
+Not recorded in this test, and deliberately not estimated:
+
+- model load time per dtype
+- the number of non-finite generated steps under fp16
+- whether `confidence` came back NaN or 1.0 under fp16
+- the micro-batch size of the timed training steps
+
+Two further points, both load-bearing for the code:
+
+**float16 must never be selected on this model.** It does not merely degrade -
+it produces NaN logits and emits token id 0, i.e. empty output, while still
+completing without raising. A run would therefore look successful and write a
+file full of blank answers.
+
+**float32 is the right fallback, not a compromise.** On the T4 it is *faster*
+per micro-batch step than emulated bf16 (12.8-13.9 s vs 14.8-15.6 s) and
+quicker to generate (2.4 s vs 2.7 s), because emulating bf16 on Turing costs
+more than running fp32 outright. It pays 1.77 GB more VRAM (7.58 vs 5.81 GB), which is
+comfortable in the T4's 16 GB. It also matches the adapter's
+`train_info.json` (`train_compute_dtype: float32`), so inference precision
+matches training precision.
+
+`model/src/predict.py` therefore selects dtype on **compute capability >= 8.0**
+(native bf16, e.g. the RTX 3050 at 8.6) and **float32 below that** (the T4 at
+7.5), and never returns float16. The gate is capability rather than
+`torch.cuda.is_bf16_supported()`, which returns True on a T4 precisely because
+it will emulate. The same dtype is applied to the 4-bit compute and to the
+modules bitsandbytes leaves unquantised.
+
+`predict()` also clamps a non-finite confidence to `0.0`. That matters because
+Python's `min`/`max` compare `False` against NaN, so the previous
+`max(0.0, min(1.0, value))` returned **1.0** for a NaN input — broken logits
+would have been reported as maximum confidence, which in mitigated mode is the
+direction that suppresses abstention. Verified locally.
+
+**fp16 training loss looked finite even though inference was invalid.** In the
+same short test, the loss over a few fp16 training steps appeared finite while
+generation was already producing NaN logits and empty output. The likely reason
+is that `prepare_model_for_kbit_training` casts several layers to float32,
+keeping the training path numerically alive while plain generation still breaks.
+**This explanation is unverified** — it was not instrumented.
+
+The practical consequence is that **a training run is not a valid check of the
+dtype**: loss can look healthy while generation is entirely broken. Only
+generation reveals it. That is why `model/notebooks/medgemma_eval.ipynb` aborts
+after the first *generation* of each configuration when the logits are not
+finite or the decoded text is empty, rather than relying on any loss value.
 
 ### 2.1 Reference measurement, not used in the project — Qwen2-VL-2B
 
@@ -226,8 +331,16 @@ Data preparation also moves to the cloud, which conveniently routes around the
 Smart App Control problem in §1: `datasets`, `pandas` 3.x and `pyarrow.compute`
 are all blocked locally, and a cloud notebook has a working Arrow stack.
 
-A 16 GB T4 or P100 is ample for a 3.01 GB 4-bit base. **None of this was tested —
-see §5.**
+A 16 GB T4 is confirmed workable for this model: measured peak **7.58 GB in
+float32** (see "Numeric precision on a Kaggle T4" in §2), leaving ample room,
+at ~13 s per micro-batch step — but a real optimiser step at effective batch 16
+took about **184-216 s**, which is the figure to plan a training run with. That
+dtype matters — float16 silently produces NaN logits and empty output there, so
+the precision must be float32 on a T4.
+
+What is measured on the T4 is the dtype behaviour, memory and per-step speed.
+The rest of the cloud path — a full training run, saving an adapter and loading
+it back for inference — is **not** verified end to end; see §5.
 
 ### Laptop (RTX 3050, 4 GB) — MedGemma-4B inference only
 
@@ -275,6 +388,13 @@ Worth stating plainly, since it was chosen with the trade-off visible:
 - `datasets`/`pandas`/`pyarrow.compute` are blocked by Smart App Control.
 - `set_per_process_memory_fraction` does not prevent the WDDM sysmem spill.
 
+Measured by the project owner on a Kaggle T4, not on this laptop:
+
+- float16 gives NaN logits and empty output; bfloat16 (emulated) and float32
+  both work; float32 is faster per micro-batch step than emulated bf16 and
+  peaks at 7.58 GB. A real optimiser step at effective batch 16 took ~184-216 s.
+  Numbers in §2.
+
 ### Not verified — open questions
 
 - **Nothing about model quality.** No clinical accuracy, no hallucination
@@ -283,9 +403,14 @@ Worth stating plainly, since it was chosen with the trade-off visible:
   "No" proves only that the forward pass completes. **This is the main risk in the
   §4 decision**: the project is now committed to MedGemma-4B with no measured
   fallback, on evidence that covers memory and speed only.
-- **Whether the cloud path works at all.** Kaggle/Colab was never touched: no
-  training run, no adapter saved, no adapter loaded back onto the laptop for
-  inference. The round trip that §4 depends on is untested end to end.
+- **Whether the cloud path works end to end.** A T4 has now been used far
+  enough to measure dtype behaviour, memory and per-step speed (§2), but the
+  full round trip that §4 depends on is not verified here: a complete training
+  run, saving an adapter, and loading that adapter back for inference. An
+  adapter does exist at `model/checkpoints/medgemma_vqarad_lora/` reporting
+  22 steps and `train_compute_dtype: float32`, but nothing in this document
+  measures its quality, and it has never been run on this laptop because torch
+  is now blocked here (see below).
 - **Real images.** All tests used a flat grey square. For MedGemma this matters
   less for token count — the vision tower is fixed at 896×896, so real X-rays
   should still give 281 tokens — but it is unverified, and local inference has
