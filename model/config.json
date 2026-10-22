@@ -1,0 +1,16 @@
+{
+  "_comment": "Runtime settings for model/src/predict.py. Tunable without code changes.",
+
+  "model_id": "google/medgemma-4b-it",
+
+  "abstention_threshold": 0.6,
+  "_abstention_threshold": "mitigated mode abstains when confidence falls below this. 0.0 disables abstention, 1.0 abstains always.",
+
+  "max_new_tokens": 48,
+  "_max_new_tokens": "hard ceiling is 48; only ~0.18 GB of VRAM is free after the 4-bit model loads (see model/docs/FIT_TEST.md).",
+
+  "min_yes_no_mass": 0.10,
+  "_min_yes_no_mass": "the yes-vs-no ratio is only trusted when yes and no together hold at least this much of the first-token distribution. Measured: a real yes/no answer carries ~0.97, while a hedged prose answer carries ~0.03 and a refusal ~0.0005, where the ratio would otherwise invent high confidence. Below this floor, confidence falls back to the mean generated-token probability. Set to 0.0 for the unguarded ratio.",
+
+  "abstain_answer": "cannot determine from this image"
+}
