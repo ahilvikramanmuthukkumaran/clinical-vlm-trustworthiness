@@ -62,3 +62,8 @@ The lower average reported confidence of the adapter should not be interpreted a
 
 ```text
 clinical-vlm-trustworthiness/
+
+ # Run
+ python -m pytest -q --ignore=model/scripts/test_load.py
+git status --short
+
