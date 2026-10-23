@@ -1,28 +1,15 @@
-# Baseline vs. Adapter Evaluation
+# Evaluation summary (test split, n = 337)
 
-## Dataset alignment
-- Baseline rows: **337**
-- Adapter rows: **337**
-- Matched unique IDs: **337**
-- IDs only in baseline: **0**
-- IDs only in adapter: **0**
+Computed from the saved Kaggle predictions in results/*.jsonl (not live inference).
 
-## Metrics on matched IDs
+| Metric | Baseline | Adapter only | Adapter + abstention (tau=0.8) |
+|---|---|---|---|
+| Closed-question accuracy (n=165) | 65.5% | 76.4% | 64.2% |
+| Open-question accuracy (n=172) | 39.5% | 43.0% | 19.8% |
+| False "yes" on closed "no" (n=79) | 29.1% | 26.6% | 19.0% |
+| Abstention rate | 0.0% | 0.0% | 48.4% |
+| Selective accuracy (answered only) | 52.2% | 59.3% | 80.5% |
+| Committed-error rate | 47.8% | 40.7% | 10.1% |
+| Overall accuracy (abstain = wrong) | 52.2% | 59.3% | 41.5% |
 
-| Metric | Baseline | Adapter (train prompt) |
-|---|---:|---:|
-| Exact match | 0.00% (0/337) | 49.85% (168/337) |
-| Mean token F1 | 0.0618 | 0.5692 |
-| Abstention rate | 0.00% | 0.00% |
-| Mean reported confidence | 0.8729 | 0.7852 |
-| Mean generation time (s) | 6.3528 | 3.3491 |
-
-## Paired comparison
-- Adapter minus baseline exact-match rate: **49.85%**
-- Baseline not exact-match, adapter exact-match: **168**
-- Baseline exact-match, adapter not exact-match: **0**
-
-## Interpretation caveat
-Exact match and token F1 are lexical reference-answer metrics, not clinically validated accuracy or a hallucination rate. Abstention is estimated from saved flags/text. Reported confidence is not necessarily a calibrated probability. This script analyses saved predictions and does not run inference.
-
-Metrics are computed from saved JSONL predictions; no model inference is performed.
+Mean generation time per question: baseline 6.35 s, adapter 3.35 s.
